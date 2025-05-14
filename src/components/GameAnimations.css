@@ -1,0 +1,57 @@
+
+/* Game Animations */
+.dice {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: var(--gold);
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  animation: diceRoll 4s infinite linear;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.card {
+  position: fixed;
+  width: 30px;
+  height: 45px;
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  animation: cardFloat 5s infinite ease-in-out;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.chip {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: radial-gradient(var(--gold), var(--gold-dark));
+  animation: chipSpin 3s infinite linear;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+@keyframes diceRoll {
+  0% { transform: rotate3d(1, 1, 1, 0deg) translateY(0); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.3; }
+  100% { transform: rotate3d(1, 1, 1, 360deg) translateY(-100vh); opacity: 0; }
+}
+
+@keyframes cardFloat {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.2; }
+  80% { opacity: 0.2; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes chipSpin {
+  0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.3; }
+  100% { transform: translateY(-100px) rotate(720deg) scale(1); opacity: 0; }
+}
