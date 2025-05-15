@@ -626,10 +626,12 @@ td:nth-child(7)[data-status="rejected"]::before {
   gap: 15px;
   margin-bottom: 20px;
 }
-.set-btn{
+
+.set-btn {
   display: flex;
   gap: 2px;
 }
+
 .summary-card {
   background: rgba(255, 255, 255, 0.05);
   padding: 15px;
@@ -746,7 +748,7 @@ td:nth-child(7)[data-status="rejected"]::before {
   .games-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .game-stats {
     grid-template-columns: 1fr;
   }

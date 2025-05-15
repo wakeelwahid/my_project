@@ -100,27 +100,27 @@ const GamesPanel = () => {
             <div className="game-stats">
               <div className="stat-item">
                 <span className="stat-label">Total Bets</span>
-                <span className="stat-value">{game.totalBets.toLocaleString()}</span>
+                <span className="gm-stat-value">{game.totalBets.toLocaleString()}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-label">Total Amount</span>
-                <span className="stat-value">₹{game.totalAmount.toLocaleString()}</span>
+                <span className="gm-stat-value">₹{game.totalAmount.toLocaleString()}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-label">Total Earnings</span>
-                <span className="stat-value">₹{game.totalEarnings.toLocaleString()}</span>
+                <span className="gm-stat-value">₹{game.totalEarnings.toLocaleString()}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-label">Monthly Earnings</span>
-                <span className="stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
+                <span className="gm-stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-label">Monthly Bets</span>
-                <span className="stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
+                <span className="gm-stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
               </div>
               <div className="stat-item">
                 <span className="stat-label">Monthly Bets amount</span>
-                <span className="stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
+                <span className="gm-stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
               </div>
             </div>
 
