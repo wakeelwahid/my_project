@@ -281,7 +281,51 @@ const AnalyticsPanel = () => {
                     <p>Withdrawals: {transactionStats.total.withdrawals}</p>
                 </div>
             </div>
-            <button className="show-all-records-btn">Show All Records</button>
+            <div className="all-records-section">
+                <div className="records-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-03-20 10:30</td>
+                                <td>Rahul Kumar</td>
+                                <td>Deposit</td>
+                                <td className="amount-positive">₹5,000</td>
+                                <td>Completed</td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-20 09:45</td>
+                                <td>Amit Singh</td>
+                                <td>Withdrawal</td>
+                                <td className="amount-negative">₹3,000</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-20 09:15</td>
+                                <td>Priya Sharma</td>
+                                <td>Deposit</td>
+                                <td className="amount-positive">₹10,000</td>
+                                <td>Completed</td>
+                            </tr>
+                            <tr>
+                                <td>2024-03-20 08:30</td>
+                                <td>Vikram Patel</td>
+                                <td>Withdrawal</td>
+                                <td className="amount-negative">₹7,500</td>
+                                <td>Completed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
   );
