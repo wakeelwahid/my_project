@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { Line, Bar } from 'react-chartjs-2';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faUsers, faMoneyBillWave, faHandHoldingDollar,
-  faArrowUp, faArrowDown, faUserPlus, faTrophy, faMoneyBillTransfer
-} from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import { Line, Bar } from "react-chartjs-2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUsers,
+  faMoneyBillWave,
+  faHandHoldingDollar,
+  faArrowUp,
+  faArrowDown,
+  faUserPlus,
+  faTrophy,
+  faMoneyBillTransfer,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,8 +21,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  Filler
-} from 'chart.js';
+  Filler,
+} from "chart.js";
 
 ChartJS.register(
   CategoryScale,
@@ -27,11 +33,11 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Filler
+  Filler,
 );
 
 const AnalyticsPanel = () => {
-  const [earningsFilter, setEarningsFilter] = useState('7days');
+  const [earningsFilter, setEarningsFilter] = useState("7days");
   const [showAllStats, setShowAllStats] = useState(false);
 
   const chartOptions = {
@@ -39,48 +45,50 @@ const AnalyticsPanel = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
-        labels: { color: '#fff' }
-      }
+        position: "top",
+        labels: { color: "#fff" },
+      },
     },
     scales: {
       y: {
         beginAtZero: true,
-        ticks: { color: '#fff' },
-        grid: { color: 'rgba(255,255,255,0.1)' }
+        ticks: { color: "#fff" },
+        grid: { color: "rgba(255,255,255,0.1)" },
       },
       x: {
-        ticks: { color: '#fff' },
-        grid: { color: 'rgba(255,255,255,0.1)' }
-      }
-    }
+        ticks: { color: "#fff" },
+        grid: { color: "rgba(255,255,255,0.1)" },
+      },
+    },
   };
-
-  
 
   const getEarningsData = (filter) => {
     // Mock data - replace with actual API call
-    if (filter === '7days') {
+    if (filter === "7days") {
       return {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Daily Earnings',
-          data: [12500, 19000, 15000, 22000, 18000, 25000, 20000],
-          borderColor: '#4CAF50',
-          backgroundColor: 'rgba(76, 175, 80, 0.2)',
-          fill: true
-        }]
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [
+          {
+            label: "Daily Earnings",
+            data: [12500, 19000, 15000, 22000, 18000, 25000, 20000],
+            borderColor: "#4CAF50",
+            backgroundColor: "rgba(76, 175, 80, 0.2)",
+            fill: true,
+          },
+        ],
       };
     } else {
       return {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [{
-          label: 'Monthly Earnings',
-          data: [95000, 88000, 105000, 98000],
-          borderColor: '#4CAF50',
-          backgroundColor: 'rgba(76, 175, 80, 0.2)',
-          fill: true
-        }]
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+        datasets: [
+          {
+            label: "Monthly Earnings",
+            data: [95000, 88000, 105000, 98000],
+            borderColor: "#4CAF50",
+            backgroundColor: "rgba(76, 175, 80, 0.2)",
+            fill: true,
+          },
+        ],
       };
     }
   };
@@ -88,39 +96,45 @@ const AnalyticsPanel = () => {
   const earningData = getEarningsData(earningsFilter);
 
   const userActivityData = {
-    labels: ['March', 'April', 'May'],
+    labels: ["March", "April", "May"],
     datasets: [
       {
-        label: 'Total Active Users',
+        label: "Total Active Users",
         data: [1245, 1532, 1678],
-        backgroundColor: '#2196F3',
+        backgroundColor: "#2196F3",
       },
       {
-        label: 'New Users',
+        label: "New Users",
         data: [245, 332, 378],
-        backgroundColor: '#4CAF50',
-      }
-    ]
+        backgroundColor: "#4CAF50",
+      },
+    ],
   };
 
   const transactionStats = {
     today: {
-      deposits: '₹52,000',
-      withdrawals: '₹38,000'
+      deposits: "₹52,000",
+      withdrawals: "₹38,000",
     },
     monthly: {
-      deposits: '₹15,80,000',
-      withdrawals: '₹12,45,000'
+      deposits: "₹15,80,000",
+      withdrawals: "₹12,45,000",
     },
     total: {
-      deposits: '₹1,25,80,000',
-      withdrawals: '₹98,45,000'
-    }
+      deposits: "₹1,25,80,000",
+      withdrawals: "₹98,45,000",
+    },
   };
 
   return (
     <div className="analytics-panel">
       <div className="stats-grid">
+        <div className="stat-box">
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faMoneyBillWave} /> Total Revenue
+          </div>
+          <div className="stat-value">₹1,234,567</div>
+        </div>
         <div className="stat-box">
           <div className="stat-title">
             <FontAwesomeIcon icon={faUsers} /> Total Users
@@ -139,15 +153,34 @@ const AnalyticsPanel = () => {
           </div>
           <div className="stat-value">95</div>
         </div>
-        <div className="stat-box">
-          <div className="stat-title">
-            <FontAwesomeIcon icon={faMoneyBillWave} /> Total Revenue
-          </div>
-          <div className="stat-value">₹1,234,567</div>
-        </div>
+
         <div className="stat-box">
           <div className="stat-title">
             <FontAwesomeIcon icon={faHandHoldingDollar} /> Today's Earnings
+          </div>
+          <div className="stat-value">₹25,430</div>
+        </div>
+        <div className="stat-box">
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faHandHoldingDollar} /> Today's Deposits
+          </div>
+          <div className="stat-value">₹25,430</div>
+        </div>
+        <div className="stat-box">
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faHandHoldingDollar} /> Today's withdrawals
+          </div>
+          <div className="stat-value">₹25,430</div>
+        </div>
+        <div className="stat-box">
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faHandHoldingDollar} /> Total deposits
+          </div>
+          <div className="stat-value">₹25,430</div>
+        </div>
+        <div className="stat-box">
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faHandHoldingDollar} /> Total withdrawals
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
@@ -163,7 +196,7 @@ const AnalyticsPanel = () => {
         <div className="chart-box">
           <div className="chart-header">
             <h3>Revenue Analytics</h3>
-            <select 
+            <select
               className="earnings-filter"
               value={earningsFilter}
               onChange={(e) => setEarningsFilter(e.target.value)}
@@ -185,9 +218,9 @@ const AnalyticsPanel = () => {
           <h3>Pending Deposits</h3>
           <div className="recent-list">
             {[
-              { user: 'John Smith', amount: '₹2,000', time: '10 min ago' },
-              { user: 'Mike Wilson', amount: '₹5,000', time: '25 min ago' },
-              { user: 'Sarah Lee', amount: '₹1,500', time: '45 min ago' },
+              { user: "John Smith", amount: "₹2,000", time: "10 min ago" },
+              { user: "Mike Wilson", amount: "₹5,000", time: "25 min ago" },
+              { user: "Sarah Lee", amount: "₹1,500", time: "45 min ago" },
             ].map((deposit, i) => (
               <div key={i} className="recent-item">
                 <div className="item-user">{deposit.user}</div>
@@ -205,9 +238,9 @@ const AnalyticsPanel = () => {
           <h3>Pending Withdrawals</h3>
           <div className="recent-list">
             {[
-              { user: 'Alice Brown', amount: '₹3,000', time: '15 min ago' },
-              { user: 'David Chen', amount: '₹4,500', time: '30 min ago' },
-              { user: 'Emma Davis', amount: '₹2,500', time: '50 min ago' },
+              { user: "Alice Brown", amount: "₹3,000", time: "15 min ago" },
+              { user: "David Chen", amount: "₹4,500", time: "30 min ago" },
+              { user: "Emma Davis", amount: "₹2,500", time: "50 min ago" },
             ].map((withdrawal, i) => (
               <div key={i} className="recent-item">
                 <div className="item-user">{withdrawal.user}</div>
@@ -225,14 +258,35 @@ const AnalyticsPanel = () => {
           <h3>Recent Transactions</h3>
           <div className="recent-list">
             {[
-              { user: 'John Doe', amount: '₹5,000', type: 'Deposit', time: '5 min ago' },
-              { user: 'Alice Smith', amount: '₹3,500', type: 'Withdrawal', time: '12 min ago' },
-              { user: 'Bob Wilson', amount: '₹7,800', type: 'Deposit', time: '25 min ago' },
+              {
+                user: "John Doe",
+                amount: "₹5,000",
+                type: "Deposit",
+                time: "5 min ago",
+              },
+              {
+                user: "Alice Smith",
+                amount: "₹3,500",
+                type: "Withdrawal",
+                time: "12 min ago",
+              },
+              {
+                user: "Bob Wilson",
+                amount: "₹7,800",
+                type: "Deposit",
+                time: "25 min ago",
+              },
             ].map((tx, i) => (
               <div key={i} className="recent-item">
                 <div className="item-user">{tx.user}</div>
                 <div className="item-details">
-                  <span className={tx.type === 'Deposit' ? 'amount-positive' : 'amount-negative'}>
+                  <span
+                    className={
+                      tx.type === "Deposit"
+                        ? "amount-positive"
+                        : "amount-negative"
+                    }
+                  >
                     {tx.amount}
                   </span>
                   <span className="item-time">{tx.time}</span>
@@ -246,13 +300,29 @@ const AnalyticsPanel = () => {
           <h3>Recent Winners</h3>
           <div className="recent-list">
             {[
-              { user: 'Mike Johnson', game: 'MILAN DAY', amount: '₹12,000', time: '2 min ago' },
-              { user: 'Sarah Davis', game: 'RAJDHANI', amount: '₹8,500', time: '15 min ago' },
-              { user: 'Tom Brown', game: 'KALYAN', amount: '₹15,000', time: '30 min ago' },
+              {
+                user: "Mike Johnson",
+                game: "MILAN DAY",
+                amount: "₹12,000",
+                time: "2 min ago",
+              },
+              {
+                user: "Sarah Davis",
+                game: "RAJDHANI",
+                amount: "₹8,500",
+                time: "15 min ago",
+              },
+              {
+                user: "Tom Brown",
+                game: "KALYAN",
+                amount: "₹15,000",
+                time: "30 min ago",
+              },
             ].map((winner, i) => (
               <div key={i} className="recent-item">
                 <div className="item-user">
-                  <FontAwesomeIcon icon={faTrophy} className="winner-icon" /> {winner.user}
+                  <FontAwesomeIcon icon={faTrophy} className="winner-icon" />{" "}
+                  {winner.user}
                 </div>
                 <div className="item-details">
                   <span className="game-name">{winner.game}</span>
@@ -264,28 +334,28 @@ const AnalyticsPanel = () => {
         </div>
       </div>
 
-        {/* Complete Transaction Records Section */}
-        <div className="complete-records">
-            <h3>Complete Transaction Records</h3>
-            <div className="transaction-stats">
-                <div className="stat-group">
-                    <h4>Today</h4>
-                    <p>Deposits: {transactionStats.today.deposits}</p>
-                    <p>Withdrawals: {transactionStats.today.withdrawals}</p>
-                </div>
-                <div className="stat-group">
-                    <h4>Monthly</h4>
-                    <p>Deposits: {transactionStats.monthly.deposits}</p>
-                    <p>Withdrawals: {transactionStats.monthly.withdrawals}</p>
-                </div>
-                <div className="stat-group">
-                    <h4>Total</h4>
-                    <p>Deposits: {transactionStats.total.deposits}</p>
-                    <p>Withdrawals: {transactionStats.total.withdrawals}</p>
-                </div>
-            </div>
-            <button className="show-all-records-btn">Show All Records</button>
+      {/* Complete Transaction Records Section */}
+      <div className="complete-records">
+        <h3>Complete Transaction Records</h3>
+        <div className="transaction-stats">
+          <div className="stat-group">
+            <h4>Today</h4>
+            <p>Deposits: {transactionStats.today.deposits}</p>
+            <p>Withdrawals: {transactionStats.today.withdrawals}</p>
+          </div>
+          <div className="stat-group">
+            <h4>Monthly</h4>
+            <p>Deposits: {transactionStats.monthly.deposits}</p>
+            <p>Withdrawals: {transactionStats.monthly.withdrawals}</p>
+          </div>
+          <div className="stat-group">
+            <h4>Total</h4>
+            <p>Deposits: {transactionStats.total.deposits}</p>
+            <p>Withdrawals: {transactionStats.total.withdrawals}</p>
+          </div>
         </div>
+        <button className="show-all-records-btn">Show All Records</button>
+      </div>
     </div>
   );
 };
