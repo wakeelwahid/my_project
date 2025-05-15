@@ -40,24 +40,45 @@ const AnalyticsPanel = () => {
   const [earningsFilter, setEarningsFilter] = useState("7days");
   const [showAllStats, setShowAllStats] = useState(false);
 
+  const isDarkMode = document.documentElement.getAttribute('data-theme') !== 'light';
+  
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
-        labels: { color: "#fff" },
+        labels: { 
+          color: isDarkMode ? "#fff" : "#1a1a1a",
+          font: {
+            weight: 600
+          }
+        },
       },
     },
     scales: {
       y: {
         beginAtZero: true,
-        ticks: { color: "#fff" },
-        grid: { color: "rgba(255,255,255,0.1)" },
+        ticks: { 
+          color: isDarkMode ? "#fff" : "#1a1a1a",
+          font: {
+            weight: 500
+          }
+        },
+        grid: { 
+          color: isDarkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)" 
+        },
       },
       x: {
-        ticks: { color: "#fff" },
-        grid: { color: "rgba(255,255,255,0.1)" },
+        ticks: { 
+          color: isDarkMode ? "#fff" : "#1a1a1a",
+          font: {
+            weight: 500
+          }
+        },
+        grid: { 
+          color: isDarkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)" 
+        },
       },
     },
   };
