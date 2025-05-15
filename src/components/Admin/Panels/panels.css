@@ -138,32 +138,38 @@
 .stat-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 10px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
   letter-spacing: 0.5px;
 }
 
 .stat-value {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
   letter-spacing: 1px;
 }
 
 /* Light mode styles */
 :root[data-theme="light"] .stat-title {
-  color: #1a1a1a;
+  color: rgba(0, 0, 0, 0.85);
   text-shadow: none;
 }
 
 :root[data-theme="light"] .stat-value {
   color: #000000;
+  font-weight: 800;
   text-shadow: none;
+}
+
+:root[data-theme="light"] .stat-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 :root[data-theme="light"] .stat-box {
