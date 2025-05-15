@@ -166,16 +166,20 @@
 }
 
 .open-sidebar {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
+  padding: 8px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .open-sidebar:hover {
