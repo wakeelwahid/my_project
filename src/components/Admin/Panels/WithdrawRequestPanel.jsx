@@ -10,6 +10,8 @@ const WithdrawRequestPanel = () => {
       user: "John Doe",
       amount: 2000,
       wallet: "9876543210@upi",
+      date: "2024-03-21",
+      time: "14:30",
       status: "pending"
     },
     {
@@ -47,6 +49,8 @@ const WithdrawRequestPanel = () => {
               <th>User</th>
               <th>Amount</th>
               <th>Wallet</th>
+              <th>Date</th>
+              <th>Time</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -58,6 +62,8 @@ const WithdrawRequestPanel = () => {
                 <td>{withdrawal.user}</td>
                 <td>₹{withdrawal.amount}</td>
                 <td>{withdrawal.wallet}</td>
+                <td>{withdrawal.date}</td>
+                <td>{withdrawal.time}</td>
                 <td>{withdrawal.status}</td>
                 <td>
                   <button className="action-btn approve">Approve</button>

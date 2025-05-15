@@ -187,6 +187,40 @@
   transform: translateY(0);
 }
 
+.action-btn.approve:disabled,
+.action-btn.reject:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Status badges */
+td:nth-child(7) {
+  font-weight: 600;
+}
+
+td:nth-child(7):not(:empty)::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+td:nth-child(7)[data-status="pending"]::before {
+  background-color: #ffd700;
+}
+
+td:nth-child(7)[data-status="approved"]::before {
+  background-color: #4CAF50;
+}
+
+td:nth-child(7)[data-status="rejected"]::before {
+  background-color: #f44336;
+}
+
 .recent-box h3 {
   margin-bottom: 15px;
   color: #fff;
