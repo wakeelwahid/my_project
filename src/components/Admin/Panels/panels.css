@@ -330,16 +330,23 @@
 
 .search-bar {
   margin-bottom: 20px;
+  display: none;
 }
 
-.search-input {
-  width: 300px;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  font-size: 14px;
+@media (min-width: 1024px) {
+  .search-bar {
+    display: block;
+  }
+  
+  .search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 14px;
+  }
 }
 
 .search-input::placeholder {

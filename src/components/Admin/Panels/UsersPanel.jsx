@@ -91,7 +91,16 @@ const UsersPanel = () => {
 
   const filteredUsers = users.filter(user => 
     user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.mobile.includes(searchTerm)
+    user.mobile.includes(searchTerm) ||
+    user.balance.toString().includes(searchTerm) ||
+    user.totalDeposit.toString().includes(searchTerm) ||
+    user.totalWithdraw.toString().includes(searchTerm) ||
+    user.totalEarning.toString().includes(searchTerm) ||
+    user.todayDeposit.toString().includes(searchTerm) ||
+    user.todayWithdraw.toString().includes(searchTerm) ||
+    user.totalReferrals.toString().includes(searchTerm) ||
+    user.referralEarnings.toString().includes(searchTerm) ||
+    user.status.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
