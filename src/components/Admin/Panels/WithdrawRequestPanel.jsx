@@ -23,14 +23,17 @@ const WithdrawRequestPanel = () => {
     }
   ]);
 
-  const filteredWithdrawals = withdrawals.filter(withdrawal =>
-    withdrawal.user.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    withdrawal.wallet.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    withdrawal.amount.toString().includes(searchTerm) ||
-    withdrawal.date.includes(searchTerm) ||
-    withdrawal.time.includes(searchTerm) ||
-    withdrawal.status.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredWithdrawals = withdrawals.filter(withdrawal => {
+    const searchTermLower = searchTerm.toLowerCase();
+    return (
+      withdrawal.user.toLowerCase().includes(searchTermLower) ||
+      withdrawal.wallet.toLowerCase().includes(searchTermLower) ||
+      withdrawal.amount.toString().includes(searchTerm) ||
+      withdrawal.date?.includes(searchTerm) ||
+      (withdrawal.time && withdrawal.time.toLowerCase().includes(searchTermLower)) ||
+      withdrawal.status.toLowerCase().includes(searchTermLower)
+    );
+  });
 
   return (
     <div className="panel">
