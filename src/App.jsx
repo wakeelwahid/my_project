@@ -41,6 +41,7 @@ function App() {
             <>
               <GameAnimations />
               <Header />
+              <TopSection />
               <Routes>
                 <Route path="/" element={<Boxes />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
