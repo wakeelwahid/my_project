@@ -25,6 +25,7 @@ import AnalyticsPanel from './Panels/AnalyticsPanel';
 import SettingsPanel from './Panels/SettingsPanel';
 import DepositRequestPanel from './Panels/DepositRequestPanel';
 import WithdrawRequestPanel from './Panels/WithdrawRequestPanel';
+import BetRecordsPanel from './Panels/BetRecordsPanel';
 
 ChartJS.register(
   CategoryScale,
@@ -55,6 +56,7 @@ const AdminDashboard = () => {
       case 'settings': return <SettingsPanel />;
       case 'deposits': return <DepositRequestPanel />;
       case 'withdrawals': return <WithdrawRequestPanel />;
+      case 'betrecords': return <BetRecordsPanel />;
       default: return <AnalyticsPanel />;
     }
   };
@@ -96,6 +98,12 @@ const AdminDashboard = () => {
             onClick={() => setActivePanel('transactions')}
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} /> Transactions
+          </button>
+          <button 
+            className={`nav-item ${activePanel === 'betrecords' ? 'active' : ''}`}
+            onClick={() => setActivePanel('betrecords')}
+          >
+            <FontAwesomeIcon icon={faGamepad} /> Bet Records
           </button>
           <button 
             className={`nav-item ${activePanel === 'deposits' ? 'active' : ''}`}
