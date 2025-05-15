@@ -49,9 +49,10 @@ const AnalyticsPanel = () => {
       legend: {
         position: "top",
         labels: { 
-          color: isDarkMode ? "#fff" : "#1a1a1a",
+          color: isDarkMode ? "#ffffff" : "#000000",
           font: {
-            weight: 600
+            weight: 600,
+            size: 14
           }
         },
       },
@@ -60,24 +61,28 @@ const AnalyticsPanel = () => {
       y: {
         beginAtZero: true,
         ticks: { 
-          color: isDarkMode ? "#fff" : "#1a1a1a",
+          color: isDarkMode ? "#ffffff" : "#000000",
           font: {
-            weight: 500
+            weight: 500,
+            size: 12
           }
         },
         grid: { 
-          color: isDarkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)" 
+          color: isDarkMode ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)",
+          drawBorder: false
         },
       },
       x: {
         ticks: { 
-          color: isDarkMode ? "#fff" : "#1a1a1a",
+          color: isDarkMode ? "#ffffff" : "#000000",
           font: {
-            weight: 500
+            weight: 500,
+            size: 12
           }
         },
         grid: { 
-          color: isDarkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)" 
+          color: isDarkMode ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)",
+          drawBorder: false
         },
       },
     },
@@ -92,8 +97,8 @@ const AnalyticsPanel = () => {
           {
             label: "Daily Earnings",
             data: [12500, 19000, 15000, 22000, 18000, 25000, 20000],
-            borderColor: "#4CAF50",
-            backgroundColor: "rgba(76, 175, 80, 0.2)",
+            borderColor: isDarkMode ? "#4CAF50" : "#2E7D32",
+            backgroundColor: isDarkMode ? "rgba(76, 175, 80, 0.2)" : "rgba(46, 125, 50, 0.15)",
             fill: true,
           },
         ],
@@ -122,12 +127,12 @@ const AnalyticsPanel = () => {
       {
         label: "Total Active Users",
         data: [1245, 1532, 1678],
-        backgroundColor: "#2196F3",
+        backgroundColor: isDarkMode ? "#2196F3" : "#1976D2",
       },
       {
         label: "New Users",
         data: [245, 332, 378],
-        backgroundColor: "#4CAF50",
+        backgroundColor: isDarkMode ? "#4CAF50" : "#2E7D32",
       },
     ],
   };
