@@ -4,7 +4,8 @@
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   padding: 20px 10px;
   overflow: hidden;
-  border-bottom: 3px solid #FFD700;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
 }
 
 /* KYC Button */
@@ -154,12 +155,13 @@
 
 .feature-card {
   background: rgba(0, 0, 0, 0.7);
-  border: 2px solid var(--neon-blue);
+  border: 2px solid var(--gold);
   border-radius: 15px;
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
 }
 
 .feature-card::before {
@@ -186,9 +188,10 @@
 
 .feature-icon {
   font-size: 2rem;
-  color: var(--neon-blue);
+  color: var(--gold);
   margin-bottom: 1rem;
   animation: iconPulse 2s infinite;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .feature-card h3 {
