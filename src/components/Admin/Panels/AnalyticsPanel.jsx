@@ -11,9 +11,11 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 } from 'chart.js';
 
 ChartJS.register(
@@ -21,9 +23,11 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 const AnalyticsPanel = () => {
@@ -38,6 +42,7 @@ const AnalyticsPanel = () => {
     },
     scales: {
       y: {
+        beginAtZero: true,
         ticks: { color: '#fff' },
         grid: { color: 'rgba(255,255,255,0.1)' }
       },
