@@ -13,21 +13,21 @@ const BetRecordsPanel = () => {
       totalBets: 156,
       totalAmount: 78000,
       numberWiseBets: {
-        '00': { count: 12, amount: 6000 },
-        '28': { count: 15, amount: 7500 },
-        '45': { count: 8, amount: 4000 },
-        '67': { count: 20, amount: 10000 },
-        '99': { count: 10, amount: 5000 },
+        '00': { count: 12, amount: 6000, andarNumber: '12', andarAmount: 2000, baharNumber: '88', baharAmount: 1500 },
+        '28': { count: 15, amount: 7500, andarNumber: '33', andarAmount: 3000, baharNumber: '77', baharAmount: 2500 },
+        '45': { count: 8, amount: 4000, andarNumber: '55', andarAmount: 1500, baharNumber: '66', baharAmount: 1000 },
+        '67': { count: 20, amount: 10000, andarNumber: '44', andarAmount: 4000, baharNumber: '99', baharAmount: 3500 },
+        '99': { count: 10, amount: 5000, andarNumber: '22', andarAmount: 2500, baharNumber: '11', baharAmount: 1800 },
       }
     },
     'MILAN DAY': {
       totalBets: 120,
       totalAmount: 60000,
       numberWiseBets: {
-        '11': { count: 10, amount: 5000 },
-        '33': { count: 12, amount: 6000 },
-        '55': { count: 15, amount: 7500 },
-        '77': { count: 8, amount: 4000 },
+        '11': { count: 10, amount: 5000, andarNumber: '25', andarAmount: 2000, baharNumber: '75', baharAmount: 1500 },
+        '33': { count: 12, amount: 6000, andarNumber: '45', andarAmount: 2500, baharNumber: '65', baharAmount: 2000 },
+        '55': { count: 15, amount: 7500, andarNumber: '15', andarAmount: 3000, baharNumber: '85', baharAmount: 2800 },
+        '77': { count: 8, amount: 4000, andarNumber: '35', andarAmount: 1800, baharNumber: '95', baharAmount: 1600 },
       }
     }
   };
