@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import './AdminDashboard.css';
 import './Panels/panels.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faGamepad, faMoneyBillTransfer, faChartLine, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faUsers, faGamepad, faMoneyBillTransfer, 
+  faChartLine, faCog, faSignOutAlt, faTachometerAlt 
+} from '@fortawesome/free-solid-svg-icons';
 import UsersPanel from './Panels/UsersPanel';
 import GamesPanel from './Panels/GamesPanel';
 import TransactionsPanel from './Panels/TransactionsPanel';
@@ -11,7 +14,7 @@ import AnalyticsPanel from './Panels/AnalyticsPanel';
 import SettingsPanel from './Panels/SettingsPanel';
 
 const AdminDashboard = () => {
-  const [activePanel, setActivePanel] = useState('users');
+  const [activePanel, setActivePanel] = useState('analytics');
 
   const renderPanel = () => {
     switch(activePanel) {
@@ -20,7 +23,7 @@ const AdminDashboard = () => {
       case 'transactions': return <TransactionsPanel />;
       case 'analytics': return <AnalyticsPanel />;
       case 'settings': return <SettingsPanel />;
-      default: return <UsersPanel />;
+      default: return <AnalyticsPanel />;
     }
   };
 
@@ -28,10 +31,16 @@ const AdminDashboard = () => {
     <div className="admin-dashboard">
       <div className="admin-sidebar">
         <div className="admin-logo">
-          <h2>Satta King</h2>
-          <p>Admin Panel</p>
+          <FontAwesomeIcon icon={faTachometerAlt} className="dashboard-icon" />
+          <h2>Admin Panel</h2>
         </div>
         <nav className="admin-nav">
+          <button 
+            className={`nav-item ${activePanel === 'analytics' ? 'active' : ''}`}
+            onClick={() => setActivePanel('analytics')}
+          >
+            <FontAwesomeIcon icon={faChartLine} /> Overview
+          </button>
           <button 
             className={`nav-item ${activePanel === 'users' ? 'active' : ''}`}
             onClick={() => setActivePanel('users')}
@@ -49,12 +58,6 @@ const AdminDashboard = () => {
             onClick={() => setActivePanel('transactions')}
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} /> Transactions
-          </button>
-          <button 
-            className={`nav-item ${activePanel === 'analytics' ? 'active' : ''}`}
-            onClick={() => setActivePanel('analytics')}
-          >
-            <FontAwesomeIcon icon={faChartLine} /> Analytics
           </button>
           <button 
             className={`nav-item ${activePanel === 'settings' ? 'active' : ''}`}

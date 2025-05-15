@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GameAnimations from "./components/GameAnimations";
@@ -25,57 +26,53 @@ import MyBet from "./components/pages/MyBet/MyBet";
 import Verification from "./components/pages/Verification/KYCVerification";
 import AddChipsSuccess from "./components/pages/AddChipsSuccess/AddChipsSuccess";
 import WithdrawalChipsSuccess from "./components/pages/WithdrawalChipsSuccess/WithdrawalChipsSuccess";
-
-
 import Login from "./components/pages/Auth/Login";
 import Register from "./components/pages/Auth/Register";
 import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   return (
-    <>
-      <Router>
-        <div className="App">
-          <GameAnimations />
-          <Header />
-
-          <Routes>
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/" element={<Boxes />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
-
-            <Route path="/profile" element={<MyProfile />} />
-            <Route path="/wallet" element={<WalletPage />} />
-            <Route path="/refer" element={<Refers />} />
-            <Route path="/support" element={<SupportPage />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/refund" element={<RefundPolicy />} />
-            <Route path="/transactions" element={<TransactionsPage />} />
-            <Route path="/history" element={<GameHistory />} />
-            <Route path="/terms" element={<TermsConditions />} />
-            <Route path="/addchips" element={<AddChips />} />
-            <Route path="/withdrawchips" element={<WithdrawChips />} />
-            <Route path="/purchasechips" element={<PaymentPage />} />
-            <Route path="/numbers" element={<NumberPage />} />
-            <Route path="/ordersuccess" element={<BetSuccessPage />} />
-            <Route path="/mychips" element={<MyBet />} />
-            <Route path="/play" element={<Boxes />} />
-            <Route path="/verification" element={<Verification />} />
-            <Route path="/addchipssuccess" element={<AddChipsSuccess />} />
-            <Route
-              path="/withdrawalchipssuccess"
-              element={<WithdrawalChipsSuccess />}
-            />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/game-rules" element={<GameRules />} />
-           
-          </Routes>
-
-          <Footer />
-        </div>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/admin/*" element={<AdminDashboard />} />
+        <Route
+          path="/*"
+          element={
+            <>
+              <GameAnimations />
+              <Header />
+              <Routes>
+                <Route path="/" element={<Boxes />} />
+                <Route path="/Dashboard" element={<Dashboard />} />
+                <Route path="/profile" element={<MyProfile />} />
+                <Route path="/wallet" element={<WalletPage />} />
+                <Route path="/refer" element={<Refers />} />
+                <Route path="/support" element={<SupportPage />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/refund" element={<RefundPolicy />} />
+                <Route path="/transactions" element={<TransactionsPage />} />
+                <Route path="/history" element={<GameHistory />} />
+                <Route path="/terms" element={<TermsConditions />} />
+                <Route path="/addchips" element={<AddChips />} />
+                <Route path="/withdrawchips" element={<WithdrawChips />} />
+                <Route path="/purchasechips" element={<PaymentPage />} />
+                <Route path="/numbers" element={<NumberPage />} />
+                <Route path="/ordersuccess" element={<BetSuccessPage />} />
+                <Route path="/mychips" element={<MyBet />} />
+                <Route path="/play" element={<Boxes />} />
+                <Route path="/verification" element={<Verification />} />
+                <Route path="/addchipssuccess" element={<AddChipsSuccess />} />
+                <Route path="/withdrawalchipssuccess" element={<WithdrawalChipsSuccess />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/game-rules" element={<GameRules />} />
+              </Routes>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
