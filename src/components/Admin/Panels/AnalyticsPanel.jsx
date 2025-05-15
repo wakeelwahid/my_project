@@ -41,7 +41,7 @@ const AnalyticsPanel = () => {
   const [showAllStats, setShowAllStats] = useState(false);
 
   const isDarkMode = document.documentElement.getAttribute('data-theme') !== 'light';
-  
+
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -52,7 +52,7 @@ const AnalyticsPanel = () => {
           color: isDarkMode ? "#ffffff" : "#000000",
           font: {
             weight: 600,
-            size: 14
+            size: window.innerWidth < 768 ? 11 : 14
           }
         },
       },
@@ -360,7 +360,7 @@ const AnalyticsPanel = () => {
         </div>
       </div>
 
-     
+
     </div>
   );
 };
