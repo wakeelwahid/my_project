@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import GameAnimations from './components/GameAnimations';
+import GameAnimations from "./components/GameAnimations";
 import Header from "./components/header/Header";
 import Footer from "./components/Footer/Footer";
 import TopSection from "./components/top-section/Top_Section";
@@ -26,7 +26,7 @@ import Verification from "./components/pages/Verification/KYCVerification";
 import AddChipsSuccess from "./components/pages/AddChipsSuccess/AddChipsSuccess";
 import WithdrawalChipsSuccess from "./components/pages/WithdrawalChipsSuccess/WithdrawalChipsSuccess";
 
-import axios from "axios";
+
 import Login from "./components/pages/Auth/Login";
 import Register from "./components/pages/Auth/Register";
 
@@ -67,16 +67,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/game-rules" element={<GameRules />} />
-             <Route path="/dashboard" component={Dashboard} />
-                    <Route path="/users" component={UserManagement} />
-                    <Route path="/game-statistics" component={GameStatistics} />
-                    <Route path="/bets" component={BetManagement} />
-                    <Route path="/deposits" component={DepositRequests} />
-                    <Route path="/withdrawals" component={WithdrawalRequests} />
-                    <Route path="/transactions" component={TransactionHistory} />
-                    <Route path="/results" component={ResultDeclaration} />
-                    <Route path="/referrals" component={ReferralSystem} />
-                    <Route component={Dashboard} /> 
+           
           </Routes>
 
           <Footer />
