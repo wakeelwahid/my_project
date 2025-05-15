@@ -41,9 +41,8 @@ function App() {
             <>
               <GameAnimations />
               <Header />
-              {window.location.pathname === '/' && <TopSection />}
               <Routes>
-                <Route path="/" element={<Boxes />} />
+                <Route path="/" element={<><TopSection /><Boxes /></>} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/profile" element={<MyProfile />} />
                 <Route path="/wallet" element={<WalletPage />} />
