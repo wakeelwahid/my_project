@@ -31,6 +31,9 @@ ChartJS.register(
 );
 
 const AnalyticsPanel = () => {
+  const [earningsFilter, setEarningsFilter] = useState('7days');
+  const [showAllStats, setShowAllStats] = useState(false);
+
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -53,7 +56,7 @@ const AnalyticsPanel = () => {
     }
   };
 
-  const [earningsFilter, setEarningsFilter] = useState('7days');
+  
 
   const getEarningsData = (filter) => {
     // Mock data - replace with actual API call
