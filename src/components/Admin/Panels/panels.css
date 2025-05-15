@@ -576,18 +576,66 @@ td:nth-child(7)[data-status="rejected"]::before {
 /* Bet Records Panel Styles */
 .bet-records-controls {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .game-select {
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-.game-select {
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 20px;
+@media (max-width: 768px) {
+  .bet-records-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .summary-card {
+    padding: 15px;
+  }
+
+  .summary-card h3 {
+    font-size: 14px;
+  }
+
+  .summary-card p {
+    font-size: 18px;
+  }
+
+  .bet-records-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+
+  .admin-table {
+    font-size: 13px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  .filter-controls {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 120px;
+  }
 }
 
 .game-select.dark {

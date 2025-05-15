@@ -33,8 +33,8 @@ const BetRecordsPanel = () => {
   };
 
   return (
-    <div className="panel">
-      <h2>Bet Records</h2>
+    <div className="panel bet-records-panel">
+      <h2 className="panel-title">Bet Records</h2>
       
       <div className="bet-records-controls">
         <select 
