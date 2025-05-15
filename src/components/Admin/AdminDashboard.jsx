@@ -5,7 +5,8 @@ import './Panels/panels.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUsers, faGamepad, faMoneyBillTransfer, 
-  faChartLine, faCog, faSignOutAlt, faTachometerAlt 
+  faChartLine, faCog, faSignOutAlt, faTachometerAlt,
+  faMoon, faSun, faTimes
 } from '@fortawesome/free-solid-svg-icons';
 import UsersPanel from './Panels/UsersPanel';
 import GamesPanel from './Panels/GamesPanel';
@@ -15,6 +16,13 @@ import SettingsPanel from './Panels/SettingsPanel';
 
 const AdminDashboard = () => {
   const [activePanel, setActivePanel] = useState('analytics');
+  const [darkMode, setDarkMode] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('light-mode');
+  };
 
   const renderPanel = () => {
     switch(activePanel) {
@@ -28,12 +36,18 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="admin-dashboard">
-      <div className="admin-sidebar">
-        <div className="admin-logo">
-          <FontAwesomeIcon icon={faTachometerAlt} className="dashboard-icon" />
-          <h2>Admin Panel</h2>
+    <div className={`admin-dashboard ${darkMode ? 'dark' : 'light'}`}>
+      <div className={`admin-sidebar ${sidebarOpen ? '' : 'collapsed'}`}>
+        <div className="sidebar-header">
+          <div className="admin-logo">
+            <FontAwesomeIcon icon={faTachometerAlt} className="dashboard-icon" />
+            <h2>Admin Panel</h2>
+          </div>
+          <button className="close-sidebar" onClick={() => setSidebarOpen(false)}>
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
         </div>
+        
         <nav className="admin-nav">
           <button 
             className={`nav-item ${activePanel === 'analytics' ? 'active' : ''}`}
@@ -66,11 +80,24 @@ const AdminDashboard = () => {
             <FontAwesomeIcon icon={faCog} /> Settings
           </button>
         </nav>
-        <button className="logout-btn">
-          <FontAwesomeIcon icon={faSignOutAlt} /> Logout
-        </button>
+
+        <div className="sidebar-footer">
+          <button className="theme-toggle" onClick={toggleDarkMode}>
+            <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
+            {darkMode ? ' Light Mode' : ' Dark Mode'}
+          </button>
+          <button className="logout-btn">
+            <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+          </button>
+        </div>
       </div>
+
       <div className="admin-main">
+        {!sidebarOpen && (
+          <button className="open-sidebar" onClick={() => setSidebarOpen(true)}>
+            ☰
+          </button>
+        )}
         {renderPanel()}
       </div>
     </div>
