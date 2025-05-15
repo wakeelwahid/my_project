@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +5,26 @@ import {
   faUsers, faMoneyBillWave, faHandHoldingDollar,
   faArrowUp, faArrowDown, faUserPlus, faTrophy
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const AnalyticsPanel = () => {
   const chartOptions = {
