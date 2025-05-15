@@ -184,15 +184,15 @@
   .admin-sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     bottom: 0;
     z-index: 1000;
     width: 100%;
     max-width: 280px;
     background: var(--bg-secondary);
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
   }
 
   .admin-sidebar:not(.collapsed) {
@@ -200,7 +200,7 @@
   }
 
   .admin-sidebar.collapsed {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 
   .admin-main {
@@ -212,7 +212,7 @@
     display: block;
     position: fixed;
     top: 15px;
-    left: 15px;
+    right: 15px;
     z-index: 900;
     background: var(--bg-secondary);
     padding: 10px;
