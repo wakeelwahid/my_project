@@ -1,4 +1,3 @@
-
 .admin-dashboard {
   display: flex;
   min-height: 100vh;
@@ -27,13 +26,13 @@
 }
 
 .admin-sidebar {
-  width: 280px;
+  width: 250px;
   background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  border-right: 1px solid var(--border-color);
 }
 
 .admin-sidebar.collapsed {
@@ -44,17 +43,16 @@
 
 .sidebar-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .admin-logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--text-primary);
 }
 
 .admin-logo h2 {
@@ -83,25 +81,21 @@
 }
 
 .admin-nav {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .nav-item {
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 15px;
-  border: none;
-  background: transparent;
-  color: var(--text-primary);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: left;
-  width: 100%;
 }
 
 .nav-item:hover {
@@ -115,8 +109,6 @@
 
 .sidebar-footer {
   margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -187,6 +179,10 @@
     left: 0;
     bottom: 0;
     z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .admin-sidebar.active {
     transform: translateX(0);
   }
 
@@ -195,6 +191,14 @@
   }
 
   .admin-main {
-    padding-left: 20px;
+    padding: 15px;
+  }
+
+  .open-sidebar {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 900;
   }
 }

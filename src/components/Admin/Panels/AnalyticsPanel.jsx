@@ -1,28 +1,10 @@
-
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faMoneyBillWave, faArrowUp, faArrowDown, faChartLine, faHandHoldingDollar } from '@fortawesome/free-solid-svg-icons';
 import { Line } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-} from 'chart.js';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faUsers, faMoneyBillWave, faHandHoldingDollar,
+  faArrowUp, faArrowDown, faUserPlus, faShare
+} from '@fortawesome/free-solid-svg-icons';
 
 const AnalyticsPanel = () => {
   const dailyEarningData = {
@@ -35,123 +17,93 @@ const AnalyticsPanel = () => {
     }]
   };
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Daily Earnings Overview'
-      }
-    }
-  };
-
   return (
     <div className="panel">
       <div className="stats-grid">
         <div className="stat-box">
-          <FontAwesomeIcon icon={faMoneyBillWave} className="stat-icon" />
-          <div className="stat-info">
-            <h3>Total Deposits</h3>
-            <div className="stat-value">₹2,50,000</div>
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faUsers} /> Total Users
           </div>
+          <div className="stat-value">15,234</div>
         </div>
 
         <div className="stat-box">
-          <FontAwesomeIcon icon={faHandHoldingDollar} className="stat-icon" />
-          <div className="stat-info">
-            <h3>Total Withdrawals</h3>
-            <div className="stat-value">₹1,80,000</div>
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faUserPlus} /> Today's New Users
           </div>
+          <div className="stat-value">45</div>
         </div>
 
         <div className="stat-box">
-          <FontAwesomeIcon icon={faArrowUp} className="stat-icon" />
-          <div className="stat-info">
-            <h3>Deposit Requests</h3>
-            <div className="stat-value">25</div>
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faShare} /> Total Referrals
           </div>
+          <div className="stat-value">2,567</div>
         </div>
 
         <div className="stat-box">
-          <FontAwesomeIcon icon={faArrowDown} className="stat-icon" />
-          <div className="stat-info">
-            <h3>Withdrawal Requests</h3>
-            <div className="stat-value">18</div>
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faMoneyBillWave} /> Referral Earnings
+          </div>
+          <div className="stat-value">₹85,420</div>
+        </div>
+      </div>
+
+      <div className="request-list">
+        <h3>Pending Requests</h3>
+        <div className="stat-box">
+          <div className="request-item">
+            <span>Deposit Requests</span>
+            <strong>23 Pending</strong>
+          </div>
+          <div className="request-item">
+            <span>Withdrawal Requests</span>
+            <strong>15 Pending</strong>
           </div>
         </div>
       </div>
 
-      <div className="stats-grid">
-        <div className="stat-box">
-          <div className="stat-info">
-            <h3>Today's Stats</h3>
-            <div className="stat-subgrid">
-              <div>
-                <p>New Users</p>
-                <span>45</span>
-              </div>
-              <div>
-                <p>Earnings</p>
-                <span>₹25,000</span>
-              </div>
-              <div>
-                <p>Deposits</p>
-                <span>₹50,000</span>
-              </div>
-              <div>
-                <p>Withdrawals</p>
-                <span>₹35,000</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="stat-box">
-          <div className="stat-info">
-            <h3>Weekly Stats</h3>
-            <div className="stat-subgrid">
-              <div>
-                <p>Earnings</p>
-                <span>₹1,75,000</span>
-              </div>
-              <div>
-                <p>Deposits</p>
-                <span>₹3,50,000</span>
-              </div>
-              <div>
-                <p>Withdrawals</p>
-                <span>₹2,45,000</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="stat-box">
-          <div className="stat-info">
-            <h3>Monthly Stats</h3>
-            <div className="stat-subgrid">
-              <div>
-                <p>Earnings</p>
-                <span>₹7,50,000</span>
-              </div>
-              <div>
-                <p>Deposits</p>
-                <span>₹15,00,000</span>
-              </div>
-              <div>
-                <p>Withdrawals</p>
-                <span>₹10,50,000</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="user-list">
+        <h3>Recent Users</h3>
+        <table className="user-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Referrals</th>
+              <th>Earnings</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>15</td>
+              <td>₹12,500</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>23</td>
+              <td>₹18,900</td>
+              <td>Active</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div className="chart-container">
-        <Line data={dailyEarningData} options={options} />
+        <Line data={dailyEarningData} options={{
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Daily Earnings Overview'
+            }
+          }
+        }} />
       </div>
     </div>
   );
