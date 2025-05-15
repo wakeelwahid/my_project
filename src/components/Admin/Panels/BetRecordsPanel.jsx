@@ -75,10 +75,9 @@ const BetRecordsPanel = () => {
           <thead>
             <tr>
               <th>Number</th>
-              <th>Total Bets</th>
               <th>Total Amount</th>
-              <th>Andar</th>
-              <th>Bahar</th>
+              <th>Andar Amount</th>
+              <th>Bahar Amount</th>
             </tr>
           </thead>
           <tbody>
@@ -86,10 +85,9 @@ const BetRecordsPanel = () => {
               Object.entries(betRecords[selectedGame].numberWiseBets).map(([number, data]) => (
                 <tr key={number}>
                   <td>{number}</td>
-                  <td>{data.count}</td>
                   <td>₹{data.amount}</td>
-                  <td>{Math.floor(data.count / 2)}</td>
-                  <td>{Math.ceil(data.count / 2)}</td>
+                  <td>₹{data.andarAmount || 0}</td>
+                  <td>₹{data.baharAmount || 0}</td>
                 </tr>
               ))
             }
