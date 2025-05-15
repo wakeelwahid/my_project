@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import './AdminDashboard.css';
+import './Panels/panels.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faGamepad, faMoneyBillTransfer, faChartLine, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import UsersPanel from './Panels/UsersPanel';
