@@ -26,6 +26,9 @@ const WithdrawRequestPanel = () => {
   const filteredWithdrawals = withdrawals.filter(withdrawal =>
     withdrawal.user.toLowerCase().includes(searchTerm.toLowerCase()) ||
     withdrawal.wallet.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    withdrawal.amount.toString().includes(searchTerm) ||
+    withdrawal.date.includes(searchTerm) ||
+    withdrawal.time.includes(searchTerm) ||
     withdrawal.status.toLowerCase().includes(searchTerm.toLowerCase())
   );
 

@@ -27,6 +27,9 @@ const DepositRequestPanel = () => {
 
   const filteredDeposits = deposits.filter(deposit =>
     deposit.user.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    deposit.amount.toString().includes(searchTerm) ||
+    deposit.date.includes(searchTerm) ||
+    deposit.time.includes(searchTerm) ||
     deposit.utrNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
     deposit.status.toLowerCase().includes(searchTerm.toLowerCase())
   );
