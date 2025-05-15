@@ -29,6 +29,7 @@ import WithdrawalChipsSuccess from "./components/pages/WithdrawalChipsSuccess/Wi
 
 import Login from "./components/pages/Auth/Login";
 import Register from "./components/pages/Auth/Register";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Header />
 
           <Routes>
+            <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/" element={<Boxes />} />
             <Route path="/Dashboard" element={<Dashboard />} />
 

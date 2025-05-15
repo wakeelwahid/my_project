@@ -25,6 +25,7 @@ const Header = () => {
   }, [sidebarActive]);
 
   const sidebarItems = [
+    { name: "Admin", icon: "shield", path: "/admin" },
     { name: "Home", icon: "home", path: "/" },
     { name: "Play", icon: "play", path: "/play" },
     { name: "Login", icon: "login", path: "/login" },
