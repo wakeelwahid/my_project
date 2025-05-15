@@ -463,6 +463,16 @@ td:nth-child(7)[data-status="rejected"]::before {
   color: var(--text-color);
 }
 
+.summary-card.andar {
+  background: rgba(0, 255, 0, 0.1);
+  border-left: 3px solid lime;
+}
+
+.summary-card.bahar {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 3px solid red;
+}
+
 .bet-records-table {
   margin-top: 20px;
   overflow-x: auto;
