@@ -53,16 +53,36 @@ const AnalyticsPanel = () => {
     }
   };
 
-  const earningData = {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    datasets: [{
-      label: 'Daily Earnings',
-      data: [12500, 19000, 15000, 22000, 18000, 25000, 20000],
-      borderColor: '#4CAF50',
-      backgroundColor: 'rgba(76, 175, 80, 0.2)',
-      fill: true
-    }]
+  const [earningsFilter, setEarningsFilter] = useState('7days');
+  
+  const getEarningsData = (filter) => {
+    // Mock data - replace with actual API call
+    if (filter === '7days') {
+      return {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Daily Earnings',
+          data: [12500, 19000, 15000, 22000, 18000, 25000, 20000],
+          borderColor: '#4CAF50',
+          backgroundColor: 'rgba(76, 175, 80, 0.2)',
+          fill: true
+        }]
+      };
+    } else {
+      return {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Monthly Earnings',
+          data: [95000, 88000, 105000, 98000],
+          borderColor: '#4CAF50',
+          backgroundColor: 'rgba(76, 175, 80, 0.2)',
+          fill: true
+        }]
+      };
+    }
   };
+
+  const earningData = getEarningsData(earningsFilter);
 
   const userActivityData = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -116,7 +136,17 @@ const AnalyticsPanel = () => {
 
       <div className="charts-container">
         <div className="chart-box">
-          <h3>Revenue Analytics</h3>
+          <div className="chart-header">
+            <h3>Revenue Analytics</h3>
+            <select 
+              className="earnings-filter"
+              value={earningsFilter}
+              onChange={(e) => setEarningsFilter(e.target.value)}
+            >
+              <option value="7days">Last 7 Days</option>
+              <option value="1month">Last Month</option>
+            </select>
+          </div>
           <Line data={earningData} options={chartOptions} />
         </div>
         <div className="chart-box">
