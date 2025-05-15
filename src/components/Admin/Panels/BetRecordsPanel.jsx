@@ -4,7 +4,7 @@ import './panels.css';
 
 const BetRecordsPanel = () => {
   // Sample data - replace with actual data from your backend
-  const games = ['RAJDHANI DAY', 'MILAN DAY', 'KALYAN', 'MAIN BAZAR'];
+  const games = ['RAJDHANI DAY', 'MILAN DAY', 'KALYAN', 'MAIN BAZAR', 'GAZIABAD', 'HARYANA'];
   const [selectedGame, setSelectedGame] = useState(games[0]);
   const [filterType, setFilterType] = useState('none'); // none, min, max
   
@@ -92,7 +92,9 @@ const BetRecordsPanel = () => {
             <tr>
               <th>Number</th>
               <th>Total Amount</th>
+              <th>Andar Number</th>
               <th>Andar Amount</th>
+              <th>Bahar Number</th>
               <th>Bahar Amount</th>
             </tr>
           </thead>
@@ -111,7 +113,9 @@ const BetRecordsPanel = () => {
                 <tr key={number}>
                   <td>{number}</td>
                   <td>₹{data.amount}</td>
+                  <td>{data.andarNumber || '-'}</td>
                   <td>₹{data.andarAmount || 0}</td>
+                  <td>{data.baharNumber || '-'}</td>
                   <td>₹{data.baharAmount || 0}</td>
                 </tr>
               ))
