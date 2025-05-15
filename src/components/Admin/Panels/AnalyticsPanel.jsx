@@ -85,12 +85,19 @@ const AnalyticsPanel = () => {
   const earningData = getEarningsData(earningsFilter);
 
   const userActivityData = {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    datasets: [{
-      label: 'New Users',
-      data: [45, 62, 38, 74, 52, 69, 84],
-      backgroundColor: '#2196F3',
-    }]
+    labels: ['March', 'April', 'May'],
+    datasets: [
+      {
+        label: 'Total Active Users',
+        data: [1245, 1532, 1678],
+        backgroundColor: '#2196F3',
+      },
+      {
+        label: 'New Users',
+        data: [245, 332, 378],
+        backgroundColor: '#4CAF50',
+      }
+    ]
   };
 
   return (
@@ -150,7 +157,7 @@ const AnalyticsPanel = () => {
           <Line data={earningData} options={chartOptions} />
         </div>
         <div className="chart-box">
-          <h3>User Growth</h3>
+          <h3>Active Users (Last 3 Months)</h3>
           <Bar data={userActivityData} options={chartOptions} />
         </div>
       </div>
