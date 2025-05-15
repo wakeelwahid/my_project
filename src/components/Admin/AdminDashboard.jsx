@@ -1,7 +1,17 @@
-
 import React, { useState } from 'react';
 import './AdminDashboard.css';
 import './Panels/panels.css';
+import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUsers, faGamepad, faMoneyBillTransfer, 
@@ -13,6 +23,16 @@ import GamesPanel from './Panels/GamesPanel';
 import TransactionsPanel from './Panels/TransactionsPanel';
 import AnalyticsPanel from './Panels/AnalyticsPanel';
 import SettingsPanel from './Panels/SettingsPanel';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const AdminDashboard = () => {
   const [activePanel, setActivePanel] = useState('analytics');
@@ -47,7 +67,7 @@ const AdminDashboard = () => {
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
-        
+
         <nav className="admin-nav">
           <button 
             className={`nav-item ${activePanel === 'analytics' ? 'active' : ''}`}

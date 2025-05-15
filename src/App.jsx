@@ -34,6 +34,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/*" element={<AdminDashboard />} />
         <Route
           path="/*"
