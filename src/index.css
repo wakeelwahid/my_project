@@ -1,18 +1,20 @@
 
 :root {
+  --primary: #FFD700;
+  --primary-dark: #D4AF37;
+  --secondary: #FF6347;
+  --dark: #333;
+  --light: #f4f4f4;
+  --danger: #f44336;
+  --bg-dark: #1a1a1a;
+  --neon-blue: #00f3ff;
+  --neon-purple: #a020f0;
+  --neon-pink: #ff1493;
   --gold: #FFD700;
   --gold-dark: #D4AF37;
-  --neon-blue: #00f3ff;
-  --neon-purple: #bc13fe;
-  --dark-bg: #0a0a0a;
   --card-bg: rgba(255, 255, 255, 0.05);
   --glass-bg: rgba(255, 255, 255, 0.1);
-  --nav-bg: #1a1a1a;
-  --green: #00FF7F;
-  --blue: #1E90FF;
-  --light: #f4f4f4;
-  --red: #FF2400;
-  --dark: #1a1a1a;
+  --nav-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
 
 body {

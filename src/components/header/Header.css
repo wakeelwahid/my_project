@@ -14,12 +14,13 @@ body {
 
 /* Navbar */
 .navbar-custom {
-  background: var(--nav-bg);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 15px rgba(0, 243, 255, 0.1);
   position: relative;
   z-index: 10;
   backdrop-filter: blur(5px);
+  border-bottom: 2px solid var(--neon-blue);
 }
 
 .container {

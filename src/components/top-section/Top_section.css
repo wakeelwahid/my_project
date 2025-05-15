@@ -153,13 +153,14 @@
 }
 
 .feature-card {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 243, 255, 0.1);
   border: 2px solid var(--neon-blue);
   border-radius: 15px;
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 243, 255, 0.1);
 }
 
 .feature-card::before {

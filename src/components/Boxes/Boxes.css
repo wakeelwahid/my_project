@@ -70,20 +70,19 @@ body {
   margin: 0;
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  box-shadow: 0 8px 20px rgba(0, 243, 255, 0.2);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   position: relative;
   color: white;
   background-size: cover;
   background-position: center;
-  height: 180px; /* Smaller height */
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid var(--gold);
-  opacity: 0;
-  transform: translateY(40px) rotateX(15deg) scale(0.95);
+  border: 2px solid var(--neon-blue);
+  background: rgba(0, 243, 255, 0.1);
   transform-style: preserve-3d;
   background-blend-mode: overlay;
 }
@@ -371,7 +370,7 @@ body {
   .satta-box-wrapper {
       width: calc(33.333% - 7px);
   }
-  
+
   .satta-box {
       height: 200px;
   }
@@ -381,19 +380,19 @@ body {
   .satta-box-wrapper {
       width: calc(25% - 8px);
   }
-  
+
   .satta-box {
       height: 220px;
   }
-  
+
   .satta-icon {
     font-size: 2.2rem;
   }
-  
+
   .satta-title {
     font-size: 1.2rem;
   }
-  
+
   .satta-number {
     font-size: 2rem;
   }
