@@ -484,20 +484,64 @@ td:nth-child(7)[data-status="rejected"]::before {
 }
 
 @media (max-width: 768px) {
+  .analytics-panel {
+    padding: 10px;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-box {
+    padding: 15px;
+  }
+
+  .stat-title {
+    font-size: 0.9rem;
+  }
+
+  .stat-value {
+    font-size: 1.4rem;
   }
 
   .charts-container {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .recent-data-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .chart-box {
-    height: 250px;
+    min-height: 200px;
+    padding: 12px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chart-box h3 {
+    font-size: 1rem;
+  }
+
+  .recent-box {
+    padding: 12px;
+  }
+
+  .recent-item {
+    padding: 8px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .item-details {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
