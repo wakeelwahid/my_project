@@ -925,33 +925,6 @@ td:nth-child(7)[data-status="rejected"]::before {
   padding: 10px;
 }
 
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.filter-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.filter-btn.active {
-  background: var(--gold);
-  color: #000;
-  border-color: var(--gold);
-}
-
 .filter-controls {
   display: flex;
   gap: 10px;

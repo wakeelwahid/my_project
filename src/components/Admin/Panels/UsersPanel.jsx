@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './panels.css';
 
@@ -75,7 +76,6 @@ const UsersPanel = () => {
       status: "active"
     }
   ]);
-  const [filterType, setFilterType] = useState(null);
 
   const handleBlockUser = (userId) => {
     console.log("Blocking user:", userId);
@@ -89,30 +89,19 @@ const UsersPanel = () => {
     console.log("Removing user:", userId);
   };
 
-  const filteredUsers = users.filter(user => {
-    const searchMatch = 
-      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.mobile.includes(searchTerm);
-
-    if (!filterType) return searchMatch;
-
-    const sortedUsers = [...users].sort((a, b) => {
-      switch(filterType) {
-        case 'maxReferral':
-          return b.totalReferrals - a.totalReferrals;
-        case 'maxDeposit':
-          return b.totalDeposit - a.totalDeposit;
-        case 'maxWithdraw':
-          return b.totalWithdraw - a.totalWithdraw;
-        case 'minBalance':
-          return a.balance - b.balance;
-        default:
-          return 0;
-      }
-    });
-
-    return searchMatch && sortedUsers.slice(0, 10).includes(user);
-  });
+  const filteredUsers = users.filter(user => 
+    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.mobile.includes(searchTerm) ||
+    user.balance.toString().includes(searchTerm) ||
+    user.totalDeposit.toString().includes(searchTerm) ||
+    user.totalWithdraw.toString().includes(searchTerm) ||
+    user.totalEarning.toString().includes(searchTerm) ||
+    user.todayDeposit.toString().includes(searchTerm) ||
+    user.todayWithdraw.toString().includes(searchTerm) ||
+    user.totalReferrals.toString().includes(searchTerm) ||
+    user.referralEarnings.toString().includes(searchTerm) ||
+    user.status.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="panel">
@@ -125,10 +114,6 @@ const UsersPanel = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
-          <button onClick={() => setFilterType('maxReferral')}>Max Referrals</button>
-          <button onClick={() => setFilterType('maxDeposit')}>Max Deposit</button>
-          <button onClick={() => setFilterType('maxWithdraw')}>Max Withdraw</button>
-          <button onClick={() => setFilterType('minBalance')}>Min Balance</button>
       </div>
       <div className="panel-content">
         <table className="admin-table">
