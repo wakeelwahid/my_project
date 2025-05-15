@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUsers, faGamepad, faMoneyBillTransfer, 
   faChartLine, faCog, faSignOutAlt, faTachometerAlt,
-  faMoon, faSun, faTimes, faArrowUp, faArrowDown
+  faTimes, faArrowUp, faArrowDown
 } from '@fortawesome/free-solid-svg-icons';
 import UsersPanel from './Panels/UsersPanel';
 import GamesPanel from './Panels/GamesPanel';
@@ -39,13 +39,7 @@ ChartJS.register(
 
 const AdminDashboard = () => {
   const [activePanel, setActivePanel] = useState('analytics');
-  const [darkMode, setDarkMode] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(true);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('light-mode');
-  };
 
   const renderPanel = () => {
     switch(activePanel) {
@@ -62,7 +56,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className={`admin-dashboard ${darkMode ? 'dark' : 'light'}`}>
+    <div className="admin-dashboard dark">
       <div className={`admin-sidebar ${sidebarOpen ? '' : 'collapsed'}`}>
         <div className="sidebar-header">
           <div className="admin-logo">
@@ -126,10 +120,6 @@ const AdminDashboard = () => {
         </nav>
 
         <div className="sidebar-footer">
-          <button className="theme-toggle" onClick={toggleDarkMode}>
-            <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
-            {darkMode ? ' Light Mode' : ' Dark Mode'}
-          </button>
           <button className="logout-btn">
             <FontAwesomeIcon icon={faSignOutAlt} /> Logout
           </button>
