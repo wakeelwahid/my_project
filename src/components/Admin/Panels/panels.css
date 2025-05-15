@@ -246,6 +246,12 @@
   overflow: hidden;
 }
 
+@media (min-width: 768px) and (max-width:911px) {
+  .recent-box {
+    margin-top: 120px;
+  }
+}
+
 @media (max-width: 1024px) {
   .charts-container {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -256,6 +262,7 @@
     min-height: 250px;
     padding: 15px;
   }
+
 }
 
 :root[data-theme="light"] .chart-box {
@@ -702,6 +709,10 @@ td:nth-child(7)[data-status="rejected"]::before {
     padding: 8px 6px;
     font-size: 0.9rem;
   }
+
+  .recent-box {
+    margin-top: 120px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -713,6 +724,10 @@ td:nth-child(7)[data-status="rejected"]::before {
   .bet-records-table td {
     padding: 6px 4px;
     font-size: 0.8rem;
+  }
+
+  .recent-box {
+    margin-top: 120px;
   }
 }
 
