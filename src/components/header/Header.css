@@ -213,11 +213,11 @@ body {
     min-width: 110px;
     padding: 0.6rem 0.8rem;
   }
-  
+
   .wallet-amount {
     font-size: 1rem;
   }
-  
+
   .wallet-label {
     font-size: 0.7rem;
   }
@@ -228,7 +228,7 @@ body {
     min-width: 90px;
     padding: 0.5rem 0.6rem;
   }
-  
+
   .wallet-amount span {
     font-size: 0.9rem;
   }
@@ -238,16 +238,16 @@ body {
   .navbar-brand-custom {
     font-size: 1.2rem;
   }
-  
+
   .wallet-box {
     min-width: 80px;
     padding: 0.5rem;
   }
-  
+
   .wallet-amount span {
     font-size: 0.8rem;
   }
-  
+
   .wallet-label {
     font-size: 0.65rem;
   }
@@ -258,17 +258,22 @@ body {
     min-width: 70px;
     padding: 0.4rem;
   }
-  
+
   .wallet-amount {
     flex-direction: column;
     gap: 2px;
   }
-  
+
   .wallet-amount span {
     font-size: 0.7rem;
   }
-  
+
   .wallet-label {
     font-size: 0.6rem;
   }
+}
+:root {
+  --gold: #FFD700;
+  --dark-gold: #D4AF37;
+  --nav-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
