@@ -92,7 +92,7 @@ const AnalyticsPanel = () => {
   };
 
   const getEarningsData = (filter) => {
-    // Mock data - replace with actual API call
+    // Mock data - repace with actual API call
     if (filter === "7days") {
       return {
         labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
