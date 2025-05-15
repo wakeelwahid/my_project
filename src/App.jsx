@@ -43,6 +43,7 @@ function App() {
               <Header />
               <Routes>
                 <Route path="/" element={<><TopSection /><Boxes /></>} />
+                <Route path="/boxes" element={<Boxes />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/profile" element={<MyProfile />} />
                 <Route path="/wallet" element={<WalletPage />} />
