@@ -6,31 +6,23 @@
 }
 
 .admin-dashboard.dark {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-color: #3b82f6;
-  --border-color: rgba(148, 163, 184, 0.1);
-  --card-bg: #1e293b;
-  --success-color: #22c55e;
-  --warning-color: #f59e0b;
-  --danger-color: #ef4444;
-  --info-color: #0ea5e9;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-color: #ffd700;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: #2a2a2a;
 }
 
 .admin-dashboard.light {
-  --bg-primary: #f8fafc;
+  --bg-primary: #f5f5f5;
   --bg-secondary: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --accent-color: #2563eb;
-  --border-color: rgba(71, 85, 105, 0.1);
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-color: #1a73e8;
+  --border-color: rgba(0, 0, 0, 0.1);
   --card-bg: #ffffff;
-  --success-color: #16a34a;
-  --warning-color: #d97706;
-  --danger-color: #dc2626;
-  --info-color: #0284c7;
 }
 
 .admin-sidebar {
