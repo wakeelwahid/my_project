@@ -581,6 +581,12 @@ td:nth-child(7)[data-status="rejected"]::before {
   gap: 15px;
 }
 
+.bet-records-panel {
+  padding: 15px;
+  width: 100%;
+  overflow-x: auto;
+}
+
 .game-select {
   padding: 12px;
   border-radius: 8px;
@@ -588,6 +594,110 @@ td:nth-child(7)[data-status="rejected"]::before {
   max-width: 300px;
   margin-bottom: 10px;
   font-size: 14px;
+}
+
+.bet-records-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.summary-card h3 {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.summary-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--gold);
+}
+
+.bet-records-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.bet-records-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.bet-records-table th,
+.bet-records-table td {
+  padding: 12px 8px;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bet-records-table th:first-child,
+.bet-records-table td:first-child {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.bet-records-table th {
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .bet-records-panel {
+    padding: 10px;
+  }
+
+  .bet-records-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-card {
+    padding: 10px;
+  }
+
+  .summary-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .summary-card p {
+    font-size: 1rem;
+  }
+
+  .bet-records-table th,
+  .bet-records-table td {
+    padding: 8px 6px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bet-records-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .bet-records-table th,
+  .bet-records-table td {
+    padding: 6px 4px;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 768px) {
