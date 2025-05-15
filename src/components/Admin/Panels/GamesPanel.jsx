@@ -114,12 +114,17 @@ const GamesPanel = () => {
                 <span className="stat-label">Monthly Earnings</span>
                 <span className="stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
               </div>
+              <div className="stat-item">
+                <span className="stat-label">Monthly Bets</span>
+                <span className="stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Monthly Bets amount</span>
+                <span className="stat-value">₹{game.monthlyEarnings.toLocaleString()}</span>
+              </div>
             </div>
 
-            <div className="game-actions">
-              <button className="action-btn">Edit</button>
-              <button className="action-btn delete">Disable</button>
-            </div>
+           
           </div>
         ))}
       </div>

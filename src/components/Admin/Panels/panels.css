@@ -732,9 +732,9 @@ td:nth-child(7)[data-status="rejected"]::before {
 
 .stat-value {
   display: block;
-  color: var(--gold);
+  color: white;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .game-actions {
