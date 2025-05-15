@@ -334,28 +334,7 @@ const AnalyticsPanel = () => {
         </div>
       </div>
 
-      {/* Complete Transaction Records Section */}
-      <div className="complete-records">
-        <h3>Complete Transaction Records</h3>
-        <div className="transaction-stats">
-          <div className="stat-group">
-            <h4>Today</h4>
-            <p>Deposits: {transactionStats.today.deposits}</p>
-            <p>Withdrawals: {transactionStats.today.withdrawals}</p>
-          </div>
-          <div className="stat-group">
-            <h4>Monthly</h4>
-            <p>Deposits: {transactionStats.monthly.deposits}</p>
-            <p>Withdrawals: {transactionStats.monthly.withdrawals}</p>
-          </div>
-          <div className="stat-group">
-            <h4>Total</h4>
-            <p>Deposits: {transactionStats.total.deposits}</p>
-            <p>Withdrawals: {transactionStats.total.withdrawals}</p>
-          </div>
-        </div>
-        <button className="show-all-records-btn">Show All Records</button>
-      </div>
+     
     </div>
   );
 };

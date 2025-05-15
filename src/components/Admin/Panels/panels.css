@@ -189,6 +189,7 @@
 .icon-glow {
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
   font-size: 1.2rem;
+  
 }
 
 .stat-title {
@@ -451,7 +452,8 @@ td:nth-child(7)[data-status="rejected"]::before {
   font-weight: bold;
 }
 
-.item-time, .game-name {
+.item-time,
+.game-name {
   color: #aaa;
   font-size: 0.9rem;
 }
