@@ -3,6 +3,13 @@ import React from 'react';
 import './panels.css';
 
 const GamesPanel = () => {
+  const handleReset = (gameId) => {
+    if (window.confirm('Are you sure you want to reset all stats for this game?')) {
+      // Add API call here to reset game stats
+      console.log('Resetting stats for game:', gameId);
+    }
+  };
+
   const games = [
     {
       id: 1,
@@ -124,6 +131,11 @@ const GamesPanel = () => {
               </div>
             </div>
 
+            <div className="game-actions">
+              <button className="reset-btn" onClick={() => handleReset(game.id)}>
+                Reset Stats
+              </button>
+            </div>
            
           </div>
         ))}
