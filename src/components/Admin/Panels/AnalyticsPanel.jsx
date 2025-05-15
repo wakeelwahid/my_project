@@ -48,43 +48,46 @@ const AnalyticsPanel = () => {
     plugins: {
       legend: {
         position: "top",
+        align: "end",
         labels: { 
-          color: isDarkMode ? "#ffffff" : "#000000",
+          color: "#ffffff",
           font: {
-            weight: 600,
-            size: window.innerWidth < 768 ? 11 : 14
-          }
+            weight: 500,
+            size: 12
+          },
+          usePointStyle: true,
+          pointStyle: 'circle'
         },
       },
     },
     scales: {
       y: {
         beginAtZero: true,
-        ticks: { 
-          color: isDarkMode ? "#ffffff" : "#000000",
-          font: {
-            weight: 500,
-            size: 12
-          }
-        },
-        grid: { 
-          color: isDarkMode ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)",
+        grid: {
+          color: "rgba(255,255,255,0.05)",
           drawBorder: false
         },
+        ticks: {
+          color: "#8f9bb3",
+          font: {
+            size: 11
+          },
+          callback: function(value) {
+            return value.toLocaleString();
+          }
+        }
       },
       x: {
-        ticks: { 
-          color: isDarkMode ? "#ffffff" : "#000000",
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: "#8f9bb3",
           font: {
-            weight: 500,
-            size: 12
+            size: 11
           }
-        },
-        grid: { 
-          color: isDarkMode ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)",
-          drawBorder: false
-        },
-      },
+        }
+      }
     },
   };
 
