@@ -1,4 +1,3 @@
-
 .analytics-panel {
   padding: 20px;
   color: #fff;
@@ -59,9 +58,25 @@
 }
 
 .recent-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 20px;
+}
+
+.action-btn.approve {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.action-btn.approve:hover {
+  background: #45a049;
 }
 
 .recent-box h3 {
@@ -118,15 +133,15 @@
   .stats-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .charts-container {
     grid-template-columns: 1fr;
   }
-  
+
   .recent-data-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .chart-box {
     height: 250px;
   }

@@ -115,6 +115,46 @@ const AnalyticsPanel = () => {
 
       <div className="recent-data-grid">
         <div className="recent-box">
+          <h3>Pending Deposits</h3>
+          <div className="recent-list">
+            {[
+              { user: 'John Smith', amount: '₹2,000', time: '10 min ago' },
+              { user: 'Mike Wilson', amount: '₹5,000', time: '25 min ago' },
+              { user: 'Sarah Lee', amount: '₹1,500', time: '45 min ago' },
+            ].map((deposit, i) => (
+              <div key={i} className="recent-item">
+                <div className="item-user">{deposit.user}</div>
+                <div className="item-details">
+                  <span className="amount-positive">{deposit.amount}</span>
+                  <span className="item-time">{deposit.time}</span>
+                  <button className="action-btn approve">Approve</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="recent-box">
+          <h3>Pending Withdrawals</h3>
+          <div className="recent-list">
+            {[
+              { user: 'Alice Brown', amount: '₹3,000', time: '15 min ago' },
+              { user: 'David Chen', amount: '₹4,500', time: '30 min ago' },
+              { user: 'Emma Davis', amount: '₹2,500', time: '50 min ago' },
+            ].map((withdrawal, i) => (
+              <div key={i} className="recent-item">
+                <div className="item-user">{withdrawal.user}</div>
+                <div className="item-details">
+                  <span className="amount-negative">{withdrawal.amount}</span>
+                  <span className="item-time">{withdrawal.time}</span>
+                  <button className="action-btn approve">Approve</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="recent-box">
           <h3>Recent Transactions</h3>
           <div className="recent-list">
             {[
