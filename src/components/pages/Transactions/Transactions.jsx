@@ -1,9 +1,48 @@
-import React from "react";
+
+import React, { useState } from "react";
 import "./Transactions.css";
 
 const Transactions = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [transactions] = useState([
+    {
+      id: 1,
+      date: "2023-06-15",
+      time: "10:24 AM",
+      type: "deposit",
+      amount: "+₹5000",
+      status: "completed",
+      utrNumber: "UTR123456789"
+    },
+    {
+      id: 2,
+      date: "2023-06-14",
+      time: "10:24 AM",
+      type: "withdraw",
+      amount: "-₹2000",
+      status: "completed",
+      utrNumber: "UTR987654321"
+    },
+    {
+      id: 3,
+      date: "2023-06-12",
+      time: "10:24 AM",
+      type: "deposit",
+      amount: "+₹10000",
+      status: "completed",
+      utrNumber: "UTR456789123"
+    }
+  ]);
+
+  const filteredTransactions = transactions.filter(transaction =>
+    transaction.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    transaction.amount.includes(searchTerm) ||
+    transaction.status.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    transaction.date.includes(searchTerm) ||
+    transaction.utrNumber.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <>
     <div className="transactions-container">
       <div className="transactions-content">
         <header className="transactions-header">
@@ -11,6 +50,15 @@ const Transactions = () => {
         </header>
         <div className="transaction-card">
           <h2 className="card-title">Your Transactions</h2>
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search transactions..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
           <div className="table-container">
             <table className="transaction-table">
               <thead>
@@ -18,67 +66,30 @@ const Transactions = () => {
                   <th>Date/Time</th>
                   <th>Type</th>
                   <th>Amount</th>
-                  {/* <th>Method</th> */}
                   <th>Status</th>
+                  <th>UTR Number</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>2023-06-15 / <span>10:24 AM</span></td>
-                  <td>deposit</td>
-                  <td className="credit">+₹5000</td>
-                  {/* <td>UPI</td> */}
-                  <td>completed</td>
-                </tr>
-                <tr>
-                  <td>2023-06-14 / <span>10:24 AM</span></td>
-                  <td>withdraw</td>
-                  <td className="debit">-₹2000</td>
-                  {/* <td>Bank Transfer</td> */}
-                  <td>completed</td>
-                </tr>
-                <tr>
-                  <td>2023-06-12 / <span>10:24 AM</span></td>
-                  <td>deposit</td>
-                  <td className="credit">+₹10000</td>
-                  {/* <td>PayTM</td> */}
-                  <td>completed</td>
-                </tr>
-                <tr>
-                  <td>2023-06-10 / <span>10:24 AM</span></td>
-                  <td>withdraw</td>
-                  <td className="debit">-₹5000</td>
-                  {/* <td>Bank Transfer</td> */}
-                  <td className="status-pending">pending</td>
-                </tr>
-                <tr>
-                  <td>2023-06-08 / <span>10:24 AM</span></td>
-                  <td>deposit</td>
-                  <td className="credit">+₹2000</td>
-                  {/* <td>UPI</td> */}
-                  <td>completed</td>
-                </tr>
-                <tr>
-                  <td>2023-06-05 / <span>10:24 AM</span></td>
-                  <td>deposit</td>
-                  <td className="credit">+₹3000</td>
-                  {/* <td>PayTM</td> */}
-                  <td>completed</td>
-                </tr>
-                <tr>
-                  <td>2023-06-03 / <span>10:24 AM</span></td>
-                  <td>withdraw</td>
-                  <td className="debit">-₹1500</td>
-                  {/* <td>UPI</td> */}
-                  <td>completed</td>
-                </tr>
+                {filteredTransactions.map(transaction => (
+                  <tr key={transaction.id}>
+                    <td>{transaction.date} / <span>{transaction.time}</span></td>
+                    <td>{transaction.type}</td>
+                    <td className={transaction.amount.startsWith('+') ? 'credit' : 'debit'}>
+                      {transaction.amount}
+                    </td>
+                    <td className={transaction.status === 'pending' ? 'status-pending' : ''}>
+                      {transaction.status}
+                    </td>
+                    <td>{transaction.utrNumber}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
-    </>
   );
 };
 
