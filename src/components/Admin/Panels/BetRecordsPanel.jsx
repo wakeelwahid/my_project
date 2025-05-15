@@ -70,7 +70,7 @@ const BetRecordsPanel = () => {
             <p>{betRecords[selectedGame].totalBets}</p>
           </div>
           <div className="summary-card">
-            <h3>Total Amount</h3>
+            <h3>Total Bet Amount</h3>
             <p>₹{Object.values(betRecords[selectedGame].numberWiseBets)
               .reduce((sum, data) => sum + data.amount + (data.andarAmount || 0) + (data.baharAmount || 0), 0)}</p>
           </div>
@@ -92,11 +92,12 @@ const BetRecordsPanel = () => {
           <thead>
             <tr>
               <th>Number</th>
-              <th>Total Amount</th>
+              <th>Number Amount</th>
               <th>Andar Number</th>
               <th>Andar Amount</th>
               <th>Bahar Number</th>
               <th>Bahar Amount</th>
+              <th>Total Amount</th>
             </tr>
           </thead>
           <tbody>
@@ -118,6 +119,7 @@ const BetRecordsPanel = () => {
                   <td>₹{data.andarAmount || 0}</td>
                   <td>{data.baharNumber || '-'}</td>
                   <td>₹{data.baharAmount || 0}</td>
+                  <td>₹{data.amount + (data.andarAmount || 0) + (data.baharAmount || 0)}</td>
                 </tr>
               ))
             }
