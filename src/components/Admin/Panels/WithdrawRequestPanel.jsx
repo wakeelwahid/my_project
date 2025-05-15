@@ -72,8 +72,8 @@ const WithdrawRequestPanel = () => {
                 <td>{withdrawal.time}</td>
                 <td>{withdrawal.status}</td>
                 <td>
-                  <button className="action-btn approve">Approve</button>
-                  <button className="action-btn reject">Reject</button>
+                  <div className='set-btn'> <button className="action-btn approve">Approve</button>
+                    <button className="action-btn reject">Reject</button></div>
                 </td>
               </tr>
             ))}

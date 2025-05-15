@@ -620,12 +620,16 @@ td:nth-child(7)[data-status="rejected"]::before {
 }
 
 .bet-records-summary {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
-
+.set-btn{
+  display: flex;
+  gap: 2px;
+}
 .summary-card {
   background: rgba(255, 255, 255, 0.05);
   padding: 15px;
