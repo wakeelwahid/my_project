@@ -6,6 +6,7 @@ const BetRecordsPanel = () => {
   // Sample data - replace with actual data from your backend
   const games = ['RAJDHANI DAY', 'MILAN DAY', 'KALYAN', 'MAIN BAZAR'];
   const [selectedGame, setSelectedGame] = useState(games[0]);
+  const [filterType, setFilterType] = useState('none'); // none, min, max
   
   const betRecords = {
     'RAJDHANI DAY': {
@@ -39,12 +40,27 @@ const BetRecordsPanel = () => {
         <select 
           value={selectedGame}
           onChange={(e) => setSelectedGame(e.target.value)}
-          className="game-select"
+          className="game-select dark"
         >
           {games.map(game => (
             <option key={game} value={game}>{game}</option>
           ))}
         </select>
+        
+        <div className="filter-controls">
+          <button 
+            className={`filter-btn ${filterType === 'min' ? 'active' : ''}`}
+            onClick={() => setFilterType(filterType === 'min' ? 'none' : 'min')}
+          >
+            Min Amount
+          </button>
+          <button 
+            className={`filter-btn ${filterType === 'max' ? 'active' : ''}`}
+            onClick={() => setFilterType(filterType === 'max' ? 'none' : 'max')}
+          >
+            Max Amount
+          </button>
+        </div>
       </div>
 
       {betRecords[selectedGame] && (
@@ -82,7 +98,16 @@ const BetRecordsPanel = () => {
           </thead>
           <tbody>
             {betRecords[selectedGame]?.numberWiseBets && 
-              Object.entries(betRecords[selectedGame].numberWiseBets).map(([number, data]) => (
+              Object.entries(betRecords[selectedGame].numberWiseBets)
+                .sort((a, b) => {
+                  if (filterType === 'min') {
+                    return a[1].amount - b[1].amount;
+                  } else if (filterType === 'max') {
+                    return b[1].amount - a[1].amount;
+                  }
+                  return 0;
+                })
+                .map(([number, data]) => (
                 <tr key={number}>
                   <td>{number}</td>
                   <td>₹{data.amount}</td>
