@@ -84,6 +84,18 @@ const AnalyticsPanel = () => {
         </div>
         <div className="stat-box">
           <div className="stat-title">
+            <FontAwesomeIcon icon={faArrowUp} /> Pending Deposits
+          </div>
+          <div className="stat-value">128</div>
+        </div>
+        <div className="stat-box">
+          <div className="stat-title">
+            <FontAwesomeIcon icon={faArrowDown} /> Pending Withdrawals
+          </div>
+          <div className="stat-value">95</div>
+        </div>
+        <div className="stat-box">
+          <div className="stat-title">
             <FontAwesomeIcon icon={faMoneyBillWave} /> Total Revenue
           </div>
           <div className="stat-value">₹1,234,567</div>
