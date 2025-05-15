@@ -1,3 +1,66 @@
+.transaction-stats-container {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.transaction-stats-container h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.transaction-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-box h4 {
+  color: #fff;
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .transaction-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-box {
+    margin-bottom: 10px;
+  }
+}
+
+.recent-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
 .analytics-panel {
   padding: 20px;
   color: #fff;
@@ -71,11 +134,7 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-.recent-data-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+
 
 .recent-box {
   background: rgba(0, 0, 0, 0.2);

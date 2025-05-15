@@ -3,7 +3,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUsers, faMoneyBillWave, faHandHoldingDollar,
-  faArrowUp, faArrowDown, faUserPlus, faTrophy
+  faArrowUp, faArrowDown, faUserPlus, faTrophy, faMoneyBillTransfer
 } from '@fortawesome/free-solid-svg-icons';
 import {
   Chart as ChartJS,
@@ -54,7 +54,7 @@ const AnalyticsPanel = () => {
   };
 
   const [earningsFilter, setEarningsFilter] = useState('7days');
-  
+
   const getEarningsData = (filter) => {
     // Mock data - replace with actual API call
     if (filter === '7days') {
@@ -98,6 +98,21 @@ const AnalyticsPanel = () => {
         backgroundColor: '#4CAF50',
       }
     ]
+  };
+
+  const transactionStats = {
+    today: {
+      deposits: '₹52,000',
+      withdrawals: '₹38,000'
+    },
+    monthly: {
+      deposits: '₹15,80,000',
+      withdrawals: '₹12,45,000'
+    },
+    total: {
+      deposits: '₹1,25,80,000',
+      withdrawals: '₹98,45,000'
+    }
   };
 
   return (
@@ -245,6 +260,29 @@ const AnalyticsPanel = () => {
           </div>
         </div>
       </div>
+
+        {/* Complete Transaction Records Section */}
+        <div className="complete-records">
+            <h3>Complete Transaction Records</h3>
+            <div className="transaction-stats">
+                <div className="stat-group">
+                    <h4>Today</h4>
+                    <p>Deposits: {transactionStats.today.deposits}</p>
+                    <p>Withdrawals: {transactionStats.today.withdrawals}</p>
+                </div>
+                <div className="stat-group">
+                    <h4>Monthly</h4>
+                    <p>Deposits: {transactionStats.monthly.deposits}</p>
+                    <p>Withdrawals: {transactionStats.monthly.withdrawals}</p>
+                </div>
+                <div className="stat-group">
+                    <h4>Total</h4>
+                    <p>Deposits: {transactionStats.total.deposits}</p>
+                    <p>Withdrawals: {transactionStats.total.withdrawals}</p>
+                </div>
+            </div>
+            <button className="show-all-records-btn">Show All Records</button>
+        </div>
     </div>
   );
 };
