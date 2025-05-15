@@ -1,9 +1,14 @@
-
 import React, { useState } from 'react';
 import './panels.css';
 
 const UsersPanel = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [maxReferrals, setMaxReferrals] = useState('');
+  const [minReferrals, setMinReferrals] = useState('');
+  const [maxDeposit, setMaxDeposit] = useState('');
+  const [minDeposit, setMinDeposit] = useState('');
+  const [maxWithdraw, setMaxWithdraw] = useState('');
+  const [minWithdraw, setMinWithdraw] = useState('');
   const [users] = useState([
     {
       id: 1,
@@ -89,19 +94,31 @@ const UsersPanel = () => {
     console.log("Removing user:", userId);
   };
 
-  const filteredUsers = users.filter(user => 
-    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.mobile.includes(searchTerm) ||
-    user.balance.toString().includes(searchTerm) ||
-    user.totalDeposit.toString().includes(searchTerm) ||
-    user.totalWithdraw.toString().includes(searchTerm) ||
-    user.totalEarning.toString().includes(searchTerm) ||
-    user.todayDeposit.toString().includes(searchTerm) ||
-    user.todayWithdraw.toString().includes(searchTerm) ||
-    user.totalReferrals.toString().includes(searchTerm) ||
-    user.referralEarnings.toString().includes(searchTerm) ||
-    user.status.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredUsers = users.filter(user => {
+    const matchesSearch = 
+      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.mobile.includes(searchTerm) ||
+      user.balance.toString().includes(searchTerm) ||
+      user.totalDeposit.toString().includes(searchTerm) ||
+      user.totalWithdraw.toString().includes(searchTerm) ||
+      user.totalEarning.toString().includes(searchTerm) ||
+      user.todayDeposit.toString().includes(searchTerm) ||
+      user.todayWithdraw.toString().includes(searchTerm) ||
+      user.totalReferrals.toString().includes(searchTerm) ||
+      user.referralEarnings.toString().includes(searchTerm) ||
+      user.status.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesReferrals = (!maxReferrals || user.totalReferrals <= parseInt(maxReferrals)) &&
+                            (!minReferrals || user.totalReferrals >= parseInt(minReferrals));
+
+    const matchesDeposit = (!maxDeposit || user.totalDeposit <= parseInt(maxDeposit)) &&
+                          (!minDeposit || user.totalDeposit >= parseInt(minDeposit));
+
+    const matchesWithdraw = (!maxWithdraw || user.totalWithdraw <= parseInt(maxWithdraw)) &&
+                           (!minWithdraw || user.totalWithdraw >= parseInt(minWithdraw));
+
+    return matchesSearch && matchesReferrals && matchesDeposit && matchesWithdraw;
+  });
 
   return (
     <div className="panel">
@@ -112,6 +129,48 @@ const UsersPanel = () => {
           placeholder="Search by name or mobile..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+        <input
+          type="number"
+          placeholder="Max Referrals"
+          value={maxReferrals}
+          onChange={(e) => setMaxReferrals(e.target.value)}
+          className="search-input"
+        />
+        <input
+          type="number"
+          placeholder="Min Referrals"
+          value={minReferrals}
+          onChange={(e) => setMinReferrals(e.target.value)}
+          className="search-input"
+        />
+        <input
+          type="number"
+          placeholder="Max Deposit"
+          value={maxDeposit}
+          onChange={(e) => setMaxDeposit(e.target.value)}
+          className="search-input"
+        />
+        <input
+          type="number"
+          placeholder="Min Deposit"
+          value={minDeposit}
+          onChange={(e) => setMinDeposit(e.target.value)}
+          className="search-input"
+        />
+        <input
+          type="number"
+          placeholder="Max Withdraw"
+          value={maxWithdraw}
+          onChange={(e) => setMaxWithdraw(e.target.value)}
+          className="search-input"
+        />
+        <input
+          type="number"
+          placeholder="Min Withdraw"
+          value={minWithdraw}
+          onChange={(e) => setMinWithdraw(e.target.value)}
           className="search-input"
         />
       </div>
