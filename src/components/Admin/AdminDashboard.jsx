@@ -16,13 +16,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUsers, faGamepad, faMoneyBillTransfer, 
   faChartLine, faCog, faSignOutAlt, faTachometerAlt,
-  faMoon, faSun, faTimes
+  faMoon, faSun, faTimes, faArrowUp, faArrowDown
 } from '@fortawesome/free-solid-svg-icons';
 import UsersPanel from './Panels/UsersPanel';
 import GamesPanel from './Panels/GamesPanel';
 import TransactionsPanel from './Panels/TransactionsPanel';
 import AnalyticsPanel from './Panels/AnalyticsPanel';
 import SettingsPanel from './Panels/SettingsPanel';
+import DepositRequestPanel from './Panels/DepositRequestPanel';
+import WithdrawRequestPanel from './Panels/WithdrawRequestPanel';
 
 ChartJS.register(
   CategoryScale,
@@ -51,6 +53,8 @@ const AdminDashboard = () => {
       case 'transactions': return <TransactionsPanel />;
       case 'analytics': return <AnalyticsPanel />;
       case 'settings': return <SettingsPanel />;
+      case 'deposits': return <DepositRequestPanel />;
+      case 'withdrawals': return <WithdrawRequestPanel />;
       default: return <AnalyticsPanel />;
     }
   };
@@ -92,6 +96,18 @@ const AdminDashboard = () => {
             onClick={() => setActivePanel('transactions')}
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} /> Transactions
+          </button>
+          <button 
+            className={`nav-item ${activePanel === 'deposits' ? 'active' : ''}`}
+            onClick={() => setActivePanel('deposits')}
+          >
+            <FontAwesomeIcon icon={faArrowUp} /> Deposit Requests
+          </button>
+          <button 
+            className={`nav-item ${activePanel === 'withdrawals' ? 'active' : ''}`}
+            onClick={() => setActivePanel('withdrawals')}
+          >
+            <FontAwesomeIcon icon={faArrowDown} /> Withdraw Requests
           </button>
           <button 
             className={`nav-item ${activePanel === 'settings' ? 'active' : ''}`}
