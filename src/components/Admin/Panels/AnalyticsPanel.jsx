@@ -40,7 +40,8 @@ const AnalyticsPanel = () => {
   const [earningsFilter, setEarningsFilter] = useState("7days");
   const [showAllStats, setShowAllStats] = useState(false);
 
-  const isDarkMode = document.documentElement.getAttribute('data-theme') !== 'light';
+  const isDarkMode =
+    document.documentElement.getAttribute("data-theme") !== "light";
 
   const chartOptions = {
     responsive: true,
@@ -49,14 +50,14 @@ const AnalyticsPanel = () => {
       legend: {
         position: "top",
         align: "end",
-        labels: { 
+        labels: {
           color: "#ffffff",
           font: {
             weight: 500,
-            size: 12
+            size: 12,
           },
           usePointStyle: true,
-          pointStyle: 'circle'
+          pointStyle: "circle",
         },
       },
     },
@@ -65,29 +66,29 @@ const AnalyticsPanel = () => {
         beginAtZero: true,
         grid: {
           color: "rgba(255,255,255,0.05)",
-          drawBorder: false
+          drawBorder: false,
         },
         ticks: {
           color: "#8f9bb3",
           font: {
-            size: 11
+            size: 11,
           },
-          callback: function(value) {
+          callback: function (value) {
             return value.toLocaleString();
-          }
-        }
+          },
+        },
       },
       x: {
         grid: {
-          display: false
+          display: false,
         },
         ticks: {
           color: "#8f9bb3",
           font: {
-            size: 11
-          }
-        }
-      }
+            size: 11,
+          },
+        },
+      },
     },
   };
 
@@ -101,7 +102,9 @@ const AnalyticsPanel = () => {
             label: "Daily Earnings",
             data: [12500, 19000, 15000, 22000, 18000, 25000, 20000],
             borderColor: isDarkMode ? "#4CAF50" : "#2E7D32",
-            backgroundColor: isDarkMode ? "rgba(76, 175, 80, 0.2)" : "rgba(46, 125, 50, 0.15)",
+            backgroundColor: isDarkMode
+              ? "rgba(76, 175, 80, 0.2)"
+              : "rgba(46, 125, 50, 0.15)",
             fill: true,
           },
         ],
@@ -160,7 +163,8 @@ const AnalyticsPanel = () => {
       <div className="stats-grid">
         <div className="stat-box gradient-purple">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faMoneyBillWave} className="icon-glow" /> Total Revenue
+            <FontAwesomeIcon icon={faMoneyBillWave} className="icon-glow" />{" "}
+            Total Revenue
           </div>
           <div className="stat-value">₹1,234,567</div>
         </div>
@@ -172,50 +176,58 @@ const AnalyticsPanel = () => {
         </div>
         <div className="stat-box gradient-green">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faArrowUp} className="icon-glow" /> Pending Deposits
+            <FontAwesomeIcon icon={faArrowUp} className="icon-glow" /> Pending
+            Deposits
           </div>
           <div className="stat-value">128</div>
         </div>
         <div className="stat-box gradient-orange">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faArrowDown} className="icon-glow" /> Pending Withdrawals
+            <FontAwesomeIcon icon={faArrowDown} className="icon-glow" /> Pending
+            Withdrawals
           </div>
           <div className="stat-value">95</div>
         </div>
 
         <div className="stat-box gradient-cyan">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faMoneyBillTransfer} className="icon-glow" /> Today's Earnings
+            <FontAwesomeIcon icon={faMoneyBillTransfer} className="icon-glow" />{" "}
+            Today's Earnings
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
         <div className="stat-box gradient-success">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faArrowUp} className="icon-glow" /> Today's Deposits
+            <FontAwesomeIcon icon={faArrowUp} className="icon-glow" /> Today's
+            Deposits
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
         <div className="stat-box gradient-warning">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faArrowDown} className="icon-glow" /> Today's Withdrawals
+            <FontAwesomeIcon icon={faArrowDown} className="icon-glow" /> Today's
+            Withdrawals
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
         <div className="stat-box gradient-indigo">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faMoneyBillWave} className="icon-glow" /> Total Deposits
+            <FontAwesomeIcon icon={faMoneyBillWave} className="icon-glow" />{" "}
+            Total Deposits
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
         <div className="stat-box gradient-rose">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faMoneyBillTransfer} className="icon-glow" /> Total Withdrawals
+            <FontAwesomeIcon icon={faMoneyBillTransfer} className="icon-glow" />{" "}
+            Total Withdrawals
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
         <div className="stat-box gradient-teal">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faUserPlus} className="icon-glow" /> New Users Today
+            <FontAwesomeIcon icon={faUserPlus} className="icon-glow" /> New
+            Users Today
           </div>
           <div className="stat-value">84</div>
         </div>
@@ -243,45 +255,7 @@ const AnalyticsPanel = () => {
       </div>
 
       <div className="recent-data-grid">
-        <div className="recent-box">
-          <h3>Pending Deposits</h3>
-          <div className="recent-list">
-            {[
-              { user: "John Smith", amount: "₹2,000", time: "10 min ago" },
-              { user: "Mike Wilson", amount: "₹5,000", time: "25 min ago" },
-              { user: "Sarah Lee", amount: "₹1,500", time: "45 min ago" },
-            ].map((deposit, i) => (
-              <div key={i} className="recent-item">
-                <div className="item-user">{deposit.user}</div>
-                <div className="item-details">
-                  <span className="amount-positive">{deposit.amount}</span>
-                  <span className="item-time">{deposit.time}</span>
-                  <button className="action-btn approve">Approve</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="recent-box">
-          <h3>Pending Withdrawals</h3>
-          <div className="recent-list">
-            {[
-              { user: "Alice Brown", amount: "₹3,000", time: "15 min ago" },
-              { user: "David Chen", amount: "₹4,500", time: "30 min ago" },
-              { user: "Emma Davis", amount: "₹2,500", time: "50 min ago" },
-            ].map((withdrawal, i) => (
-              <div key={i} className="recent-item">
-                <div className="item-user">{withdrawal.user}</div>
-                <div className="item-details">
-                  <span className="amount-negative">{withdrawal.amount}</span>
-                  <span className="item-time">{withdrawal.time}</span>
-                  <button className="action-btn approve">Approve</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+     
 
         <div className="recent-box">
           <h3>Recent Transactions</h3>
@@ -362,8 +336,6 @@ const AnalyticsPanel = () => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
