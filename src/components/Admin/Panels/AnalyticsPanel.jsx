@@ -129,27 +129,27 @@ const AnalyticsPanel = () => {
   return (
     <div className="analytics-panel">
       <div className="stats-grid">
-        <div className="stat-box">
+        <div className="stat-box gradient-purple">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faMoneyBillWave} /> Total Revenue
+            <FontAwesomeIcon icon={faMoneyBillWave} className="icon-glow" /> Total Revenue
           </div>
           <div className="stat-value">₹1,234,567</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-blue">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faUsers} /> Total Users
+            <FontAwesomeIcon icon={faUsers} className="icon-glow" /> Total Users
           </div>
           <div className="stat-value">15,234</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-green">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faArrowUp} /> Pending Deposits
+            <FontAwesomeIcon icon={faArrowUp} className="icon-glow" /> Pending Deposits
           </div>
           <div className="stat-value">128</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-orange">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faArrowDown} /> Pending Withdrawals
+            <FontAwesomeIcon icon={faArrowDown} className="icon-glow" /> Pending Withdrawals
           </div>
           <div className="stat-value">95</div>
         </div>
