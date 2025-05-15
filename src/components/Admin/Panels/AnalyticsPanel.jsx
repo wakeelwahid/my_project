@@ -33,6 +33,7 @@ ChartJS.register(
 const AnalyticsPanel = () => {
   const [earningsFilter, setEarningsFilter] = useState('7days');
   const [showAllStats, setShowAllStats] = useState(false);
+  const [showAllRecords, setShowAllRecords] = useState(false);
 
   const chartOptions = {
     responsive: true,
@@ -284,8 +285,14 @@ const AnalyticsPanel = () => {
                     <p>Withdrawals: {transactionStats.total.withdrawals}</p>
                 </div>
             </div>
-            <button className="show-all-records-btn">Show All Records</button>
+            <button 
+              className="show-all-records-btn" 
+              onClick={() => setShowAllRecords(true)}
+            >
+              Show All Records
+            </button>
         </div>
+        {showAllRecords && <AllRecordsPanel onClose={() => setShowAllRecords(false)} />}
     </div>
   );
 };
