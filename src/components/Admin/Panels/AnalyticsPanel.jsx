@@ -154,39 +154,39 @@ const AnalyticsPanel = () => {
           <div className="stat-value">95</div>
         </div>
 
-        <div className="stat-box">
+        <div className="stat-box gradient-cyan">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faHandHoldingDollar} /> Today's Earnings
+            <FontAwesomeIcon icon={faMoneyBillTransfer} className="icon-glow" /> Today's Earnings
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-success">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faHandHoldingDollar} /> Today's Deposits
+            <FontAwesomeIcon icon={faArrowUp} className="icon-glow" /> Today's Deposits
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-warning">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faHandHoldingDollar} /> Today's withdrawals
+            <FontAwesomeIcon icon={faArrowDown} className="icon-glow" /> Today's Withdrawals
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-indigo">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faHandHoldingDollar} /> Total deposits
+            <FontAwesomeIcon icon={faMoneyBillWave} className="icon-glow" /> Total Deposits
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-rose">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faHandHoldingDollar} /> Total withdrawals
+            <FontAwesomeIcon icon={faMoneyBillTransfer} className="icon-glow" /> Total Withdrawals
           </div>
           <div className="stat-value">₹25,430</div>
         </div>
-        <div className="stat-box">
+        <div className="stat-box gradient-teal">
           <div className="stat-title">
-            <FontAwesomeIcon icon={faUserPlus} /> New Users Today
+            <FontAwesomeIcon icon={faUserPlus} className="icon-glow" /> New Users Today
           </div>
           <div className="stat-value">84</div>
         </div>
