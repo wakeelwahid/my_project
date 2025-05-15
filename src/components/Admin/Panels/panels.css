@@ -661,14 +661,16 @@ td:nth-child(7)[data-status="rejected"]::before {
 }
 
 @media (max-width: 768px) {
+  .bet-records-panel {
+    padding: 10px;
+  }
+
   .bet-records-summary {
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .summary-card {
-    padding: 12px;
-    min-width: 160px;
-    max-width: calc(50% - 8px);
+    padding: 10px;
   }
 
   .summary-card h3 {
@@ -700,13 +702,20 @@ td:nth-child(7)[data-status="rejected"]::before {
 
 @media (max-width: 768px) {
   .bet-records-summary {
-    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .summary-card {
-    padding: 12px;
-    min-width: 160px;
-    max-width: calc(50% - 8px);
+    padding: 15px;
+  }
+
+  .summary-card h3 {
+    font-size: 14px;
+  }
+
+  .summary-card p {
+    font-size: 18px;
   }
 
   .bet-records-table {
