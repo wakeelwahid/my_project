@@ -310,13 +310,6 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .recent-box {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-}
-
 .action-btn.approve {
   background: linear-gradient(45deg, #4CAF50, #45a049);
   color: white;
