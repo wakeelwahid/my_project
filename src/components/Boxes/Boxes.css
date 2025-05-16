@@ -270,57 +270,34 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Hover effects */
-.satta-box:hover {
-  animation: glow 2s infinite, borderPulse 3s infinite;
-  transform: translateY(-8px) rotateX(0deg) scale(1.03) !important;
+/* Box styles without hover */
+.satta-box {
+  animation: glow 2s infinite;
 }
 
-.satta-box:hover::before {
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(212,175,55,0.5) 100%);
-}
-
-.satta-box:hover::after {
-  animation: shine 1.5s;
-}
-
-.satta-box:hover .satta-content {
+.satta-content {
   transform: translateY(0) translateZ(0);
   opacity: 1;
 }
 
-.satta-box:hover .satta-icon {
-  transform: scale(1.1) rotateY(0deg) rotateZ(0deg);
-  animation: float 3s ease-in-out infinite, pulse 1.5s infinite;
+.satta-icon {
+  transform: scale(1) rotateY(0deg) rotateZ(0deg);
+  animation: float 3s ease-in-out infinite;
 }
 
-.satta-box:hover .satta-title {
+.satta-title {
   transform: translateX(0) rotateY(0deg);
   opacity: 1;
-  text-shadow: 0 0 10px var(--gold);
 }
 
-.satta-box:hover .satta-number {
-  transform: scale(1.05) translateZ(0);
+.satta-number {
+  transform: scale(1) translateZ(0);
   opacity: 1;
 }
 
-.satta-box:hover .satta-number::after {
-  transform: scaleX(1);
-}
-
-.satta-box:hover .satta-btn {
+.satta-btn {
   transform: translateY(0) translateZ(0);
   opacity: 1;
-}
-
-.satta-btn:hover {
-  transform: translateY(-3px) translateZ(0) !important;
-  box-shadow: 0 6px 20px rgba(212,175,55,0.8);
-}
-
-.satta-btn:hover::before {
-  left: 100%;
 }
 
 /* Floating coins animation */
