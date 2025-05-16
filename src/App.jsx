@@ -1,6 +1,7 @@
 
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import GameAnimations from "./components/GameAnimations";
 import Header from "./components/header/Header";
 import Footer from "./components/Footer/Footer";
@@ -69,6 +70,7 @@ function App() {
                 <Route path="/game-rules" element={<GameRules />} />
               </Routes>
               <Footer />
+              <WhatsAppButton />
             </>
           }
         />
