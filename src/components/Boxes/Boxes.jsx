@@ -161,18 +161,25 @@ const Satta = () => {
             <div key={game.id} className="satta-box-wrapper">
               <div className={`satta-box ${game.locked ? 'locked' : ''}`}>
                 <div className="satta-content">
-                  <div className="satta-icon">
-                    <FontAwesomeIcon icon={game.locked ? faLock : game.icon} />
+                  <div className="satta-icon-wrapper">
+                    <div className="satta-icon">
+                      <FontAwesomeIcon icon={game.locked ? faLock : game.icon} className="icon-pulse" />
+                    </div>
                   </div>
                   <h4 className="satta-title">{game.title}</h4>
-                  <div className="satta-number">{game.number}</div>
+                  <div className="satta-number-wrapper">
+                    <div className="satta-number">{game.number}</div>
+                    <div className="number-glow"></div>
+                  </div>
                   {game.locked ? (
                     <button className="satta-btn locked" disabled>
-                      LOCKED
+                      <span className="btn-text">LOCKED</span>
+                      <div className="btn-glow"></div>
                     </button>
                   ) : (
                     <Link to="/numbers" className="satta-btn">
-                      PLAY NOW
+                      <span className="btn-text">PLAY NOW</span>
+                      <div className="btn-glow"></div>
                     </Link>
                   )}
                 </div>
