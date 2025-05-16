@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom';
 
 const ProfilePage = () => {
   return (
-    <div>
-      <div id="floatingCoins"></div>
+    <div className="profile-container">
+      <div id="floatingCoins" className="animated-coins"></div>
 
       {/* Profile Header */}
       <header className="profile-header">
-        <h1 className="profile-title">MY PROFILE</h1>
-        <p className="profile-subtitle">Track your progress and earnings</p>
+        <div className="header-content">
+          <h1 className="profile-title">MY PROFILE</h1>
+          <p className="profile-subtitle">Track your progress and earnings</p>
+          <div className="profile-glow"></div>
+        </div>
       </header>
 
       {/* Profile Card */}
