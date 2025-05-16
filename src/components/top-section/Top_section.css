@@ -32,18 +32,52 @@
 
 /* Announcement Marquee */
 .announcement-marquee {
-  background: rgba(212, 175, 55, 0.2);
-  padding: 8px 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.8), rgba(212, 175, 55, 0.2), rgba(0,0,0,0.8));
+  padding: 12px 0;
   margin-bottom: 15px;
-  border-top: 1px solid #FFD700;
-  border-bottom: 1px solid #FFD700;
+  border-top: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 .announcement-marquee marquee {
   color: #FFD700;
   font-weight: 600;
-  font-size: 0.9rem;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.marquee-item {
+  margin: 0 25px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.marquee-item.bonus {
+  background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(255,140,0,0.2));
+  border: 1px solid #FFD700;
+}
+
+.marquee-item.jackpot {
+  background: linear-gradient(90deg, rgba(255,0,0,0.2), rgba(255,215,0,0.2));
+  border: 1px solid #FF4500;
+}
+
+.marquee-item.new-game {
+  background: linear-gradient(90deg, rgba(0,255,255,0.2), rgba(0,191,255,0.2));
+  border: 1px solid #00CED1;
+}
+
+.marquee-item.special {
+  background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(218,165,32,0.2));
+  border: 1px solid #DAA520;
+}
+
+.marquee-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .announcement-item {
