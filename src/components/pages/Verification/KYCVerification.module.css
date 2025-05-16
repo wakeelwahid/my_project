@@ -1,10 +1,10 @@
 .container {
-  --gold: #FFD700;
-  --gold-dark: #D4AF37;
-  --red: #FF2400;
-  --green: #00FF7F;
-  --blue: #1E90FF;
-  --dark: #1a1a1a;
+  --primary: #00f3ff;
+  --primary-dark: #00c4cc;
+  --red: #ff1493;
+  --green: #00f3ff;
+  --blue: #00f3ff;
+  --dark: #1a1a2e;
   --light: #f4f4f4;
 }
 

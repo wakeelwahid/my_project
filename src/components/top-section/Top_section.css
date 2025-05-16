@@ -1,10 +1,10 @@
 /* Top Section Styles */
 .top-section-container {
   position: relative;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   padding: 20px 10px;
   overflow: hidden;
-  border-bottom: 3px solid #FFD700;
+  border-bottom: 3px solid var(--neon-blue);
 }
 
 /* KYC Button */
