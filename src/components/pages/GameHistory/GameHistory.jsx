@@ -5,37 +5,7 @@ const GameHistory = () => {
   return (
     <>
     <div className="game-history-container">
-  {/* Floating Numbers (static positions) */}
-  <div
-    className="floating-number"
-    style={{ left: "10vw", top: "20vh", animationDelay: "0.5s" }}
-  >
-    7
-  </div>
-  <div
-    className="floating-number"
-    style={{ left: "25vw", top: "40vh", animationDelay: "1.2s" }}
-  >
-    3
-  </div>
-  <div
-    className="floating-number"
-    style={{ left: "75vw", top: "30vh", animationDelay: "2.8s" }}
-  >
-    9
-  </div>
-  <div
-    className="floating-number"
-    style={{ left: "50vw", top: "70vh", animationDelay: "0.8s" }}
-  >
-    1
-  </div>
-  <div
-    className="floating-number"
-    style={{ left: "85vw", top: "60vh", animationDelay: "3.5s" }}
-  >
-    5
-  </div>
+  
   <header className="history-header">
     <h1 className="history-title">GAME HISTORY</h1>
   </header>

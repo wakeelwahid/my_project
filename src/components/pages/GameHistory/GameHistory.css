@@ -24,52 +24,26 @@ body {
   overflow: hidden;
 }
 
-/* Floating Numbers */
-.floating-number {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  background: var(--gold);
-  color: black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 0.9rem;
-  animation: floatNumber 8s linear infinite;
-  z-index: -1;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
-}
-
-@keyframes floatNumber {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-}
-
-/* Header */
 .history-header {
   text-align: center;
-  padding: 20px 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(139,0,0,0.5));
-  border-bottom: 2px solid var(--gold);
-  border-radius: 8px;
-  margin-bottom: 20px;
+  padding: 25px 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(13, 13, 13, 0.95));
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  margin-bottom: 30px;
   position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.history-header::before {
-  content: "";
+.history-header::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="50" font-family="Arial" font-size="20" fill="rgba(255,215,0,0.05)">SK</text></svg>');
-  opacity: 0.3;
-  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .history-title {
@@ -294,19 +268,19 @@ body {
   .game-history-container {
       padding: 10px;
   }
-  
+
   .history-title {
       font-size: 1.6rem;
   }
-  
+
   .filter-controls {
       flex-direction: column;
   }
-  
+
   .game-details {
       grid-template-columns: 1fr;
   }
-  
+
   .number-ball {
       width: 28px;
       height: 28px;
