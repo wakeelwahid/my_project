@@ -145,7 +145,7 @@ const Satta = () => {
       id: 6,
       title: "UPCOMING",
       icon: faCalendarAlt,
-      number: "COMING SOON",
+      number: "1-30",
       locked: true
     }
   ];
