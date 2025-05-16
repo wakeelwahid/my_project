@@ -187,8 +187,8 @@ body {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
-  transform: translateY(20px) translateZ(0);
-  opacity: 0;
+  transform: translateY(0) translateZ(0);
+  opacity: 1;
   transition: all 0.4s ease;
   box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
   position: relative;
@@ -198,6 +198,40 @@ body {
   text-transform: uppercase;
   z-index: 1;
   backdrop-filter: blur(5px);
+  animation: buttonPulse 2s infinite;
+}
+
+.satta-btn:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 243, 255, 0.5);
+  background: linear-gradient(45deg, var(--primary-dark), var(--neon-blue));
+}
+
+.satta-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  transition: 0.6s;
+}
+
+.satta-btn:hover::after {
+  animation: btnShine 1.5s infinite;
+}
+
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes btnShine {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
 }
 
 .satta-btn::before {
