@@ -172,10 +172,10 @@ const Satta = () => {
                     <div className="number-glow"></div>
                   </div>
                   {game.locked ? (
-                    <button className="satta-btn locked" disabled>
-                      <span className="btn-text">LOCKED</span>
+                    <Link to="/numbers" className="satta-btn">
+                      <span className="btn-text">PLAY NOW</span>
                       <div className="btn-glow"></div>
-                    </button>
+                    </Link>
                   ) : (
                     <Link to="/numbers" className="satta-btn">
                       <span className="btn-text">PLAY NOW</span>
