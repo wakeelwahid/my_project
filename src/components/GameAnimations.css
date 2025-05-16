@@ -1,60 +1,15 @@
-
-/* Game Animations */
-.dice {
+.video-background {
   position: fixed;
-  width: 40px;
-  height: 40px;
-  background: var(--gold);
-  border-radius: 8px;
-  transform-style: preserve-3d;
-  animation: diceRoll 4s infinite linear;
-  opacity: 0.3;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.card {
-  position: fixed;
-  width: 30px;
-  height: 45px;
-  background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
-  border-radius: 5px;
-  transform-style: preserve-3d;
-  animation: cardFloat 5s infinite ease-in-out;
-  opacity: 0.2;
-  z-index: 0;
-}
-
-.chip {
-  position: fixed;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: radial-gradient(var(--gold), var(--gold-dark));
-  animation: chipSpin 3s infinite linear;
-  opacity: 0.3;
-  z-index: 0;
-}
-
-@keyframes diceRoll {
-  0% { transform: rotate3d(1, 1, 1, 0deg) translateY(0) scale(0.3); opacity: 0; }
-  20% { opacity: 0.6; transform: rotate3d(1, 1, 1, 180deg) translateY(-20vh) scale(1.2); }
-  50% { opacity: 0.8; transform: rotate3d(1, 1, 1, 360deg) translateY(-50vh) scale(1); }
-  80% { opacity: 0.6; transform: rotate3d(1, 1, 1, 540deg) translateY(-80vh) scale(1.2); }
-  100% { transform: rotate3d(1, 1, 1, 720deg) translateY(-100vh) scale(0.3); opacity: 0; }
-}
-
-@keyframes cardFloat {
-  0% { transform: translateY(100vh) rotate(0deg) scale(0.2); opacity: 0; }
-  20% { opacity: 0.7; transform: translateY(60vh) rotate(180deg) scale(1.5); }
-  50% { opacity: 0.9; transform: translateY(30vh) rotate(360deg) scale(1); }
-  80% { opacity: 0.7; transform: translateY(0vh) rotate(540deg) scale(1.5); }
-  100% { transform: translateY(-100px) rotate(720deg) scale(0.2); opacity: 0; }
-}
-
-@keyframes chipSpin {
-  0% { transform: translateY(100vh) rotate(0deg) scale(0.2); opacity: 0; filter: hue-rotate(0deg); }
-  25% { opacity: 0.8; transform: translateY(50vh) rotate(180deg) scale(1.5); filter: hue-rotate(90deg); }
-  50% { opacity: 1; transform: translateY(25vh) rotate(360deg) scale(1); filter: hue-rotate(180deg); }
-  75% { opacity: 0.8; transform: translateY(0) rotate(540deg) scale(1.5); filter: hue-rotate(270deg); }
-  100% { transform: translateY(-100px) rotate(720deg) scale(0.2); opacity: 0; filter: hue-rotate(360deg); }
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
