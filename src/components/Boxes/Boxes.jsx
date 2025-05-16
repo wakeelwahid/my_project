@@ -156,7 +156,7 @@ const Satta = () => {
       <div className="floating-coins" id="floatingCoins" />
 
       <div className="satta-container">
-        <div className="satta-row">
+        <div className="satta-row mobile-grid">
           {games.map((game) => (
             <div key={game.id} className="satta-box-wrapper">
               <div className={`satta-box ${game.locked ? 'locked' : ''}`}>
