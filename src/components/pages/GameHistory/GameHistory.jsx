@@ -1,11 +1,9 @@
 import React from 'react'
 import './GameHistory.css'
-import BackButton from '../../BackButton/BackButton'
 
 const GameHistory = () => {
   return (
     <>
-    <BackButton />
     <div className="game-history-container">
   
   <header className="history-header">
