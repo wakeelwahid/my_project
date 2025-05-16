@@ -24,15 +24,7 @@ const Footer = () => {
 
       {/* Footer Content */}
       <div className="footer-container">
-        <div className="footer-section">
-          <h3>Popular Games</h3>
-          <ul>
-            <li><a href="/disawar"><i className="fas fa-dice"></i> Disawar</a></li>
-            <li><a href="/gali"><i className="fas fa-dice"></i> Gali</a></li>
-            <li><a href="/ghaziabad"><i className="fas fa-dice"></i> Ghaziabad</a></li>
-            <li><a href="/faridabad"><i className="fas fa-dice"></i> Faridabad</a></li>
-          </ul>
-        </div>
+        
 
         <div className="footer-section">
           <h3>Quick Links</h3>
@@ -52,19 +44,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="footer-section">
-          <h3>Follow Us</h3>
-          <div className="social-icons">
-            <a href="#" className="social-icon"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="social-icon"><i className="fab fa-telegram"></i></a>
-            <a href="#" className="social-icon"><i className="fab fa-whatsapp"></i></a>
-            <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
-          </div>
-          <div className="contact-info">
-            <p><i className="fas fa-envelope"></i> support@sattaking.com</p>
-            <p><i className="fas fa-phone-alt"></i> +91 XXXXX XXXXX</p>
-          </div>
-        </div>
+
       </div>
 
       {/* Copyright & Disclaimer */}
