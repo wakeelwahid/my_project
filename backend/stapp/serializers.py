@@ -57,6 +57,7 @@ class DepositRequestSerializer(serializers.ModelSerializer):
         read_only_fields = ['user', 'status', 'created_at']
 
 
+
 class BetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bet

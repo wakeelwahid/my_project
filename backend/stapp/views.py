@@ -22,6 +22,22 @@ class MobileLoginView(TokenObtainPairView):
     serializer_class = MobileTokenObtainPairSerializer
 
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def user_profile(request):
+    user = request.user
+    return Response({
+        "id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "mobile": user.mobile,
+        "referral_code": user.referral_code,
+    })
+
 # --- Wallet Balance View ---
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -85,21 +101,49 @@ def transaction_history(request):
         'note': tx.note
     } for tx in transactions])
 
+
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework import status
+from datetime import timedelta
+from decimal import Decimal
+from django.utils import timezone
+from .models import Bet
+from .serializers import BetSerializer
+
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from decimal import Decimal, InvalidOperation
+from .models import Bet, Wallet  # make sure these are imported
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def place_bet(request):
     user = request.user
     game = request.data.get('game')
     bet_type = request.data.get('bet_type')
-    number = int(request.data.get('number'))
-    amount = Decimal(request.data.get('amount'))
+    number = request.data.get('number')
+    amount = request.data.get('amount')
+
+    # Validate input
+    try:
+        number = int(number)
+        amount = Decimal(amount)
+    except (ValueError, TypeError, InvalidOperation):
+        return Response({'error': 'Invalid number or amount'}, status=400)
 
     if bet_type == 'number' and not (1 <= number <= 100):
         return Response({'error': 'Number must be 1-100 for number bet'}, status=400)
     if bet_type in ['andar', 'bahar'] and not (0 <= number <= 9):
         return Response({'error': 'Number must be 0-9 for Andar/Bahar'}, status=400)
 
-    wallet = Wallet.objects.get(user=user)
+    try:
+        wallet = Wallet.objects.get(user=user)
+    except Wallet.DoesNotExist:
+        return Response({'error': 'Wallet not found'}, status=400)
+
     if wallet.balance < amount:
         return Response({'error': 'Insufficient balance'}, status=400)
 
@@ -115,6 +159,23 @@ def place_bet(request):
     )
 
     return Response({'message': 'Bet placed successfully', 'bet_id': bet.id})
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def view_bets_24h(request):
+    since = timezone.now() - timedelta(hours=24)
+    bets = Bet.objects.filter(user=request.user, created_at__gte=since).order_by('-created_at')
+    serializer = BetSerializer(bets, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def view_bets_30d(request):
+    since = timezone.now() - timedelta(days=30)
+    bets = Bet.objects.filter(user=request.user, created_at__gte=since).order_by('-created_at')
+    serializer = BetSerializer(bets, many=True)
+    return Response(serializer.data)
+
 
 
 # ✅ Django Views for Result Declaration, Bet History, Referral Earnings, Admin Stats

@@ -64,6 +64,13 @@ class Transaction(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.transaction_type} - {self.amount} - {self.status}"
 
+
+from django.db import models
+from django.contrib.auth import get_user_model
+from decimal import Decimal
+
+User = get_user_model()
+
 class Bet(models.Model):
     GAME_CHOICES = [
         ('gali', 'Gali'),
@@ -86,6 +93,11 @@ class Bet(models.Model):
     is_win = models.BooleanField(default=False)
     payout = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.game} - {self.bet_type} - {self.number}"
+
+
 
 
 class ReferralCommission(models.Model):

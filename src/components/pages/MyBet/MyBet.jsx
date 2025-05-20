@@ -5,10 +5,9 @@ const MyBet = () => {
   return (
    <>
   
-  <header className="bet-header">
+  <header>
     <div className="bet-logo">
-      My <span className="highlight">Bets</span>
-      <div className="bet-logo-underline"></div>
+      My <span>Bets</span>
     </div>
   </header>
   <div className="my-container">

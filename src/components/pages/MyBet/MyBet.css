@@ -4,36 +4,14 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .bet-header {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-  padding: 20px 0;
-  border-bottom: 2px solid var(--gold);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #1a1a1a 0%, #000 100%);
+  padding: 15px 0;
+  
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
   margin-bottom: 30px;
-  position: relative;
-  overflow: hidden;
-}
-
-.bet-header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  to {
-    left: 100%;
-  }
 }
 
 .bet-logo {
@@ -68,42 +46,13 @@ h1 {
 }
 
 .bet-card {
-  background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.9));
-  border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 25px;
-  border: 1px solid rgba(255, 215, 0, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   text-align: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-}
-
-.bet-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 215, 0, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-}
-
-.bet-logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-}
-
-.bet-logo .highlight {
-  color: var(--gold);
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-.bet-logo-underline {
-  width: 50px;
-  height: 3px;
-  background: var(--gold);
-  margin: 10px auto;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .bet-header {
